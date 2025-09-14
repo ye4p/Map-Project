@@ -1,0 +1,12 @@
+@import "leaflet/dist/leaflet.css";
+#map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;   /* remove browser default spacing */
+  padding: 0;
+}

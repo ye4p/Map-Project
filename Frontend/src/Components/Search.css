@@ -1,0 +1,66 @@
+.search-form {
+    position: absolute;
+    z-index: 500;
+    top: 1px;
+    margin: 10px 0 0 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.search-form .filter-bars {
+    background: #fff;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    transition: all 0.3s ease;
+}
+.search-form .filter-bars:hover {
+    background: #c2c2c2;
+}
+.search-form .filter-bars i {
+    font-size: 26px;
+}
+.search-form form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 10px;
+}
+.search-form input {
+    border: none;
+    outline: none;
+    height: 45px;
+    width: 300px;
+    border-radius: 10px 0 0 10px;
+    padding: 0px 0 0 20px;
+    font-size: 16px;
+    line-height: 45px;
+}
+.search-form button {
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 45px;
+    border-radius: 0 10px 10px 0;
+    background: rgb(224, 224, 224);
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+.search-form button:hover {
+    background: #c2c2c2;
+}
+.search-form button i {
+    font-size: 16px;
+}
