@@ -1,5 +1,7 @@
 import React from 'react'
 import './Search.css'
+import Filters from './Filters'
+
 const Search = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
