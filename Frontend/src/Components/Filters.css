@@ -40,3 +40,9 @@
 .question_mark p:hover {
   text-decoration: underline;
 }
+.hover-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

@@ -18,12 +18,24 @@ const Filters = () => {
       </label>
     
       </div>
-      <div className="question_mark">
+      <div className="hover-text">
+        <div className="full-ques-box">
+        <div className="question_mark">
         <i class="fa fa-question-circle-o" aria-hidden="true"></i>
         <p>What is this?</p>
       </div>
+      <span>If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.</span>
+      </div>
+      <div className="full-ques-box">
+      <div className="question_mark">
+        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+        <p>How to contribute?</p>
+      </div>
+      <span>Currently we don't have information about every place where people speak Russian/Ukrainian, but if you know such place and it is not on here, you can find it here and then submit a support ticked with corresponding message!</span>
+      </div>
+      </div>
       
-      <span>Currently we don't have information about every place where people speak Russian/Ukrainian, but if you know such place and it is not on here, you can find it here and then submit a support ticked with corresponding text!</span>
+      
       </div>
     </div>
   )
