@@ -1,5 +1,5 @@
 .search-form {
-    position: absolute;
+    /* position: absolute; */
     z-index: 500;
     /* top: 1px;
     margin: 10px 0 0 10px; */
@@ -72,8 +72,8 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    gap: 100px;
-    margin: 10px 0 0 10px;
+    gap: 30px;
+    margin: 15px 0 0 15px;
 }
