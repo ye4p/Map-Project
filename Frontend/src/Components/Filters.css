@@ -46,3 +46,25 @@
     align-items: center;
     gap: 20px;
 }
+.full-ques-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.full-ques-box .question-inside {
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    width: 250px;
+    background: rgb(168, 168, 168);
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 5px;
+    top: 35px;
+}
+
+/* .full-ques-box .question-inside:hover {
+    opacity: 1;
+} */
