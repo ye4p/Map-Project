@@ -1,0 +1,6 @@
+.filters-window {
+    height: 400px;
+    width: 460px;
+    background: white;
+    z-index: 499;
+}
