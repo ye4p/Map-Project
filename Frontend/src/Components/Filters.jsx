@@ -1,12 +1,11 @@
 import React from 'react'
 import './Filters.css'
 import {useState} from 'react'
+import Hoverable from './Hover-text.jsx'
 
 const Filters = ( {filterOpen}) => {
 
-  const [onHover1, setOnHover1] = useState(false);
-  const [onHover2, setOnHover2] = useState(false)
-
+  
   function hoverTest() {
     setOnHover1(true)
     console.log(onHover1)
@@ -32,24 +31,7 @@ const Filters = ( {filterOpen}) => {
     
       </div>
       <div className="hover-text">
-        <div className="full-ques-box">
-        <div className="question_mark">
-        <i className="fa fa-question-circle-o" aria-hidden="true"></i>
-        <p 
-          onMouseEnter={() => setOnHover1(true)} 
-          onMouseOut = {() => setOnHover1(false)}
-        >What is this?</p>
-      </div>
-      <div 
-      className='question-inside'
-      style={{ opacity: onHover1 ? 1 : 0}}
-      >
-        <span>
-          If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.
-          </span>
-      </div>
-      
-      </div>
+        <Hoverable text='If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.'/>
       <div className="full-ques-box">
       <div className="question_mark">
         <i className="fa fa-question-circle-o" aria-hidden="true"></i>
@@ -71,7 +53,16 @@ const Filters = ( {filterOpen}) => {
       
       
       </div>
-      
+      <div className='dropdown-place'>
+        <select name="place" id="place">
+          <option value="park">Parks</option>
+          <option value="restaurant">Restaurants</option>
+          <option value="grocery">Grocery shops</option>
+          <option value="cinema">Cinemas</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
     </div>
   )
 }
