@@ -2,9 +2,9 @@ import React from 'react'
 import './Filters.css'
 import {useState} from 'react'
 
-const Filters = () => {
+const Filters = ( {filterOpen}) => {
 
-  const [onHover1, setOnHover1] = useState(true); //Changed for the time of styling
+  const [onHover1, setOnHover1] = useState(false);
   const [onHover2, setOnHover2] = useState(false)
 
   function hoverTest() {
@@ -13,10 +13,12 @@ const Filters = () => {
   }
 
   return (
-    <div className='filters-window'>
+    <div className='filters-window'
+      style={{opacity: filterOpen ? 1 : 0}}
+    >
       
       <div className="box-lan">
-        <span>Languages spoken:</span>
+        <p>Languages spoken:</p>
         <div className="checkbox-lan">
         <label>
         <input type="checkbox" name="language" value="russian"/>
@@ -38,10 +40,14 @@ const Filters = () => {
           onMouseOut = {() => setOnHover1(false)}
         >What is this?</p>
       </div>
-      <span 
+      <div 
       className='question-inside'
       style={{ opacity: onHover1 ? 1 : 0}}
-      >If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.</span>
+      >
+        <span>
+          If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.
+          </span>
+      </div>
       
       </div>
       <div className="full-ques-box">
@@ -52,15 +58,20 @@ const Filters = () => {
           onMouseOut = {() => setOnHover2(false)}
         >How to contribute?</p>
       </div>
-      <span 
+      <div 
       className='question-inside'
       style={{ opacity: onHover2 ? 1 : 0}}
-      >Currently we don't have information about every place where people speak Russian/Ukrainian, but if you know such place and it is not on here, you can find it here and then submit a support ticked with corresponding message!</span>
+      >
+        <span>
+          If you know such place, but it is not on here, you can find it and submit ticket and we are going to add it!
+          </span>
+      </div>
       </div>
       </div>
       
       
       </div>
+      
     </div>
   )
 }

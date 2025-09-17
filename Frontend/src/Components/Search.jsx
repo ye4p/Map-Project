@@ -1,18 +1,26 @@
 import React from 'react'
 import './Search.css'
 import Filters from './Filters'
+import {useState} from 'react'
 
 const Search = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
     }
-
+    const [filterOpen, setFilterOpen] = useState(false)
+    function testFilter() {
+        setFilterOpen(!filterOpen)
+        console.log(filterOpen)
+    }
 
   return (
     <>
     <div className='left-window'>
         <div className='search-form'>
-            <div className="filter-bars">
+            <div 
+                className="filter-bars"
+                onClick={testFilter}
+                >
                 <i className="fa fa-bars" aria-hidden="true"></i>
             </div>
             <form onSubmit={handleSubmit}>
@@ -23,7 +31,9 @@ const Search = () => {
                 </button>
             </form>
         </div>
-        <Filters/>
+        <Filters
+            filterOpen={filterOpen}
+        />
     </div>
     </>
   )
