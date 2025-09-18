@@ -5,6 +5,11 @@ const Type = () => {
 
     return (
         <div className="type-place">
+            <div className="type-title">
+                <span>
+                    Choose type of place:
+                </span>
+            </div>
             <select name="place" id="place">
                 <option value="park">Parks</option>
                 <option value="restaurant">Restaurants</option>

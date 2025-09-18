@@ -1,4 +1,14 @@
-.dropdown-place select {
+.type-place {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+}
+.type-place select {
     height: 30px;
     width: 100px;
+}
+.type-title {
+    font-weight: 500;
+    font-size: 20;
 }
