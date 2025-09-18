@@ -2,7 +2,7 @@ import './Hover-text.css'
 import {useState} from 'react'
 
 
-const Hoverable = () => {
+const Hoverable = ({text}) => {
     const [onHover, setOnHover] = useState(false)
 
     return (
@@ -19,7 +19,8 @@ const Hoverable = () => {
       style={{ opacity: onHover ? 1 : 0}}
       >
         <span>
-          If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.
+          {/* If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here. */}
+          {text}
           </span>
       </div>
       
@@ -27,4 +28,5 @@ const Hoverable = () => {
     )
 }
 
-export.default = Hoverable
+export default Hoverable
+// Need to add

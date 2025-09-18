@@ -5,6 +5,7 @@ import Hoverable from './Hover-text.jsx'
 
 const Filters = ( {filterOpen}) => {
 
+    const [onHover2, setOnHover2] = useState(false)
   
   function hoverTest() {
     setOnHover1(true)
@@ -32,36 +33,12 @@ const Filters = ( {filterOpen}) => {
       </div>
       <div className="hover-text">
         <Hoverable text='If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.'/>
-      <div className="full-ques-box">
-      <div className="question_mark">
-        <i className="fa fa-question-circle-o" aria-hidden="true"></i>
-        <p
-        onMouseEnter={() => setOnHover2(true)} 
-          onMouseOut = {() => setOnHover2(false)}
-        >How to contribute?</p>
-      </div>
-      <div 
-      className='question-inside'
-      style={{ opacity: onHover2 ? 1 : 0}}
-      >
-        <span>
-          If you know such place, but it is not on here, you can find it and submit ticket and we are going to add it!
-          </span>
-      </div>
-      </div>
+        <Hoverable text='If you know such place, but it is not on here, you can find it and submit ticket and we are going to add it!'/>
       </div>
       
       
       </div>
-      <div className='dropdown-place'>
-        <select name="place" id="place">
-          <option value="park">Parks</option>
-          <option value="restaurant">Restaurants</option>
-          <option value="grocery">Grocery shops</option>
-          <option value="cinema">Cinemas</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
+      
 
     </div>
   )
