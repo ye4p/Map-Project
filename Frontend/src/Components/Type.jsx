@@ -6,11 +6,12 @@ const Type = () => {
     return (
         <div className="type-place">
             <div className="type-title">
-                <span>
+                <p>
                     Choose type of place:
-                </span>
+                </p>
             </div>
             <select name="place" id="place">
+                <option value="all">All</option>
                 <option value="park">Parks</option>
                 <option value="restaurant">Restaurants</option>
                 <option value="grocery">Grocery shops</option>

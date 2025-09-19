@@ -3,17 +3,24 @@ import './Filters.css'
 import {useState} from 'react'
 import Hoverable from './Hover-text.jsx'
 import Type from './Type.jsx'
+import Stars from './Stars.jsx'
 
 const Filters = ( {filterOpen}) => {
 
 
   return (
     <div className='filters-window'
-      style={{opacity: filterOpen ? 1 : 0}}
+      style={{
+        opacity: filterOpen ? 1 : 0,
+        pointerEvents: filterOpen ? 'auto' : 'none'
+      }}
     >
-      
+      <p className='main-title'>Filters</p> 
+      <div className="lan-wrap">
+        <div className='title-lan'>
+          <p>Languages spoken:</p>
+        </div>
       <div className="box-lan">
-        <p>Languages spoken:</p>
         <div className="checkbox-lan">
         <label>
         <input type="checkbox" name="language" value="russian"/>
@@ -27,12 +34,13 @@ const Filters = ( {filterOpen}) => {
     
       </div>
       <div className="hover-text">
-        <Hoverable text='If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.'/>
-        <Hoverable text='If you know such place, but it is not on here, you can find it and submit ticket and we are going to add it!'/>
+        <Hoverable question='What is this?' text='If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.'/>
+        <Hoverable question='How to contribute?' text='If you know such place, but it is not on here, you can find it and submit ticket and we are going to add it!'/>
+      </div>
       </div>
       </div>
       <Type/>
-
+      <Stars/>
     </div>
   )
 }

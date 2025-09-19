@@ -2,7 +2,7 @@ import './Hover-text.css'
 import {useState} from 'react'
 
 
-const Hoverable = ({text}) => {
+const Hoverable = ({text, question}) => {
     const [onHover, setOnHover] = useState(false)
 
     return (
@@ -12,7 +12,7 @@ const Hoverable = ({text}) => {
         <p 
           onMouseEnter={() => setOnHover(true)} 
           onMouseOut = {() => setOnHover(false)}
-        >What is this?</p>
+        >{question}</p>
       </div>
       <div 
       className='question-inside'
