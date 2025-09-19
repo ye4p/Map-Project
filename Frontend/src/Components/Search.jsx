@@ -33,6 +33,7 @@ const Search = () => {
         </div>
         <Filters
             filterOpen={filterOpen}
+            setFilterOpen={setFilterOpen}
         />
     </div>
     </>

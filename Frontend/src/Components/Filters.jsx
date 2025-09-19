@@ -6,11 +6,14 @@ import Type from './Type.jsx'
 import Stars from './Stars.jsx'
 import Review from './Review.jsx'
 import Buttons from './Buttons.jsx'
-const Filters = ( {filterOpen}) => {
+const Filters = ( {filterOpen, setFilterOpen}) => {
 
 
   return (
-    
+    <>
+    <div className="close-button">
+      <button></button>
+    </div>
     <div className="white-menu"
     style={{
         opacity: filterOpen ? 1 : 0,
@@ -46,9 +49,12 @@ const Filters = ( {filterOpen}) => {
       <Stars/>
       <Review/>
     </div>
-      <Buttons/>
+      <Buttons
+        filterOpen={filterOpen}
+        setFilterOpen={setFilterOpen}
+      />
     </div>
-   
+   </>
    
   )
 }

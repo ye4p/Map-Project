@@ -105,3 +105,8 @@
     height: 30px;
     width: 100px;
 }
+.close-button {
+    position: absolute;
+    z-index: 501;
+    background-color: red;
+}
