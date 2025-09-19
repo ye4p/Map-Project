@@ -58,7 +58,7 @@ const Stars = () => {
   return (
     <div className='stars-box'>
         <div className="title-stars">
-            <span>Minimal rating:</span>
+            <span>Minimum rating:</span>
         </div>
         <div className="stars">
             <span className="fa fa-star checked" id='star1' onClick={handleClick}></span>

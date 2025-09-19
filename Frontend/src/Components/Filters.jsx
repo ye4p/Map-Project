@@ -4,17 +4,20 @@ import {useState} from 'react'
 import Hoverable from './Hover-text.jsx'
 import Type from './Type.jsx'
 import Stars from './Stars.jsx'
-
+import Review from './Review.jsx'
+import Buttons from './Buttons.jsx'
 const Filters = ( {filterOpen}) => {
 
 
   return (
-    <div className='filters-window'
-      style={{
+    
+    <div className="white-menu"
+    style={{
         opacity: filterOpen ? 1 : 0,
         pointerEvents: filterOpen ? 'auto' : 'none'
       }}
     >
+    <div className='filters-window'>
       <p className='main-title'>Filters</p> 
       <div className="lan-wrap">
         <div className='title-lan'>
@@ -41,7 +44,12 @@ const Filters = ( {filterOpen}) => {
       </div>
       <Type/>
       <Stars/>
+      <Review/>
     </div>
+      <Buttons/>
+    </div>
+   
+   
   )
 }
 

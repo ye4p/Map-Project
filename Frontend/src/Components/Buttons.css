@@ -1,0 +1,33 @@
+.buttons-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.buttons-end button{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 22px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 120px;
+    font-weight: 500;
+}
+.buttons-end .cancel {
+    outline: 2px solid red;
+    transition: all 0.3s ease;
+}
+.buttons-end .cancel:hover {
+    background: rgb(255, 0, 0, .25);
+}
+.buttons-end .find {
+    background: linear-gradient(140deg, rgba(24, 175, 245, 1) 0%, rgba(33, 101, 173, 1) 70%);
+    background-size: 200% 200%; /* allow room for movement */
+    color: white;
+    transition: background-position 0.3s ease; /* animate position instead of angle */
+}
+
+.buttons-end .find:hover {
+    background-position: right center; /* shift gradient smoothly */
+}

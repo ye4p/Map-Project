@@ -10,7 +10,7 @@ const Search = () => {
     const [filterOpen, setFilterOpen] = useState(false)
     function testFilter() {
         setFilterOpen(!filterOpen)
-        console.log(filterOpen)
+       //console.log(filterOpen)
     }
 
   return (
