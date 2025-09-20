@@ -1,0 +1,41 @@
+.results-window {
+    height: 100%;
+}
+.results-window .results-arrow {
+    position: absolute;
+    left: 0;
+    padding: 10px 20px;
+}
+.results-window .results-arrow i {
+    font-size: 44px;
+}
+.results-window .results-title {
+    font-size: 26px;
+    font-weight: 400;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.results-title p span {
+    font-weight: 600;
+}
+.results-window .results-end {
+    /* position: absolute; */
+    /* height: 90%;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.results-end .results-end-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+}
+.results-window .results-list {
+    height: 84%;
+    background: red;
+    margin: 10px 10px 10px 10px;
+}

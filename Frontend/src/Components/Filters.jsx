@@ -6,21 +6,42 @@ import Type from './Type.jsx'
 import Stars from './Stars.jsx'
 import Review from './Review.jsx'
 import Buttons from './Buttons.jsx'
+import Results from './Results.jsx'
 const Filters = ( {filterOpen, setFilterOpen}) => {
-
-
+  function test() {
+    console.log(closeFilterOnly)
+  }
+  function changeFilter() {
+    setFilterOpen(!filterOpen)
+  }
+  const [closeFilterOnly, setCloseFilterOnly] = useState(false)
+  function closeFilterOnly_func() {
+    setCloseFilterOnly(!closeFilterOnly)
+    console.log('changed', closeFilterOnly)
+  }
   return (
     <>
-    <div className="close-button">
-      <button></button>
-    </div>
+    
     <div className="white-menu"
     style={{
         opacity: filterOpen ? 1 : 0,
         pointerEvents: filterOpen ? 'auto' : 'none'
       }}
     >
-    <div className='filters-window'>
+      <div className="close-button">
+      <button
+      onClick={changeFilter}
+      >
+        <i className="fa fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div className='filters-window'
+      style={{
+        display: closeFilterOnly ? 'none' : 'flex',
+       // opacity: closeFilterOnly ? 0 : 1,
+       // pointerEvents: closeFilterOnly ? 'none' : 'auto'
+      }}
+    >
       <p className='main-title'>Filters</p> 
       <div className="lan-wrap">
         <div className='title-lan'>
@@ -48,11 +69,19 @@ const Filters = ( {filterOpen, setFilterOpen}) => {
       <Type/>
       <Stars/>
       <Review/>
-    </div>
       <Buttons
         filterOpen={filterOpen}
         setFilterOpen={setFilterOpen}
+        closeFilterOnly={closeFilterOnly}
+        setCloseFilterOnly={setCloseFilterOnly}
+        closeFilterOnly_func={closeFilterOnly_func}
       />
+    </div>
+      <Results 
+        closeFilterOnly={closeFilterOnly}
+        setCloseFilterOnly={setCloseFilterOnly}
+      />
+      
     </div>
    </>
    

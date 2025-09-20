@@ -108,5 +108,16 @@
 .close-button {
     position: absolute;
     z-index: 501;
-    background-color: red;
+    right: 0;
+    padding: 10px 20px;
+    /* right:20px;
+    top: 90px; */
+}
+.close-button button {
+    outline: none;
+    border: none;
+    background: none;
+}
+.close-button i {
+    font-size: 44px;
 }

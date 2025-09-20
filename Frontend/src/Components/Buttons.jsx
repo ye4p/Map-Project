@@ -1,6 +1,6 @@
 import React from 'react'
 import './Buttons.css'
-const Buttons = ({filterOpen, setFilterOpen}) => {
+const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly, closeFilterOnly_func}) => {
     function changeFilter() {
         setFilterOpen(!filterOpen)
         console.log(filterOpen)
@@ -8,7 +8,9 @@ const Buttons = ({filterOpen, setFilterOpen}) => {
   return (
     <div className='buttons-end'>
         <button className='cancel' onClick={changeFilter}>Cancel</button>
-        <button className='find'>Find</button>
+        <button className='find'
+        onClick={closeFilterOnly_func}
+        >Find</button>
     </div>
   )
 }
