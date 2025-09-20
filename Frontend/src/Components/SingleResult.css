@@ -1,0 +1,30 @@
+.single-result {
+    height: 95px;
+    min-height: 95px;
+    max-height: 95px;
+    position: relative;
+}
+.single-result .result-name {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+.single-main-result {
+    font-weight: 500;
+}
+.result-name .fa.fa-star {
+    font-size: 16px;
+    color: rgb(255, 188, 2);
+}
+.single-result .single-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.single-description {
+    display: flex;
+    align-items: center;
+    padding: 5px 0 0 0;
+}
