@@ -1,9 +1,10 @@
 import React from 'react'
-import { MapContainer, TileLayer, useMap, Marker} from 'react-leaflet'
+import { MapContainer, TileLayer, useMap, Marker, Popup} from 'react-leaflet'
 import './Map.css'
 import { Control } from 'leaflet'
 import { useEffect } from "react";
 import L from "leaflet";
+import CustomPopup from './Components/CustomPopup';
 
 // This is to place zoomin/zoom out button at the bottom right corner instead of the default one at the top left.
 function ZoomControlBottomRight() {
@@ -36,6 +37,11 @@ const Map = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <ZoomControlBottomRight />
+         <Marker position={[28.05, -82.66]}>
+        <Popup>
+          <CustomPopup />
+        </Popup>
+      </Marker>
     </MapContainer>
   
     </>
