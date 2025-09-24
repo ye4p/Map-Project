@@ -18,3 +18,15 @@
 .availability p {
     margin: 0;
 }
+.popup-main {
+    font-size: 14px;
+}
+.popup-main p {
+    margin: 10px 0
+}
+.popup-end {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}

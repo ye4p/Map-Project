@@ -16,6 +16,13 @@ const CustomPopup = () => {
         <p className="popup-adress">Address: <span>2923 Tampa Street Ap A1</span></p>
         <p className="popup-info">Additional info: <span>bla bla bla</span></p>
       </div>
+      <div className="popup-end">
+        <button
+        onClick={() => {
+          alert('add info')
+        }}
+        >Add missing data</button>
+      </div>
       
     </div>
     );
