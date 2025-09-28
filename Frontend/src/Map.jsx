@@ -38,8 +38,11 @@ const Map = () => {
         />
         <ZoomControlBottomRight />
          <Marker position={[28.05, -82.66]}>
-        <Popup>
-          <CustomPopup />
+        <Popup
+        style={{width: '270px'}}
+        maxWidth={270}
+        >
+          <CustomPopup/>
         </Popup>
       </Marker>
     </MapContainer>

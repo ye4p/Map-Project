@@ -1,0 +1,32 @@
+.popup-content {
+    height: 200px;
+    width: 270px;
+}
+.popup-header {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+}
+.popup-header h2 {
+    font-size: 18px;
+}
+.availability {
+    display: flex;
+    font-size: 16px;
+}
+.availability p {
+    margin: 0;
+}
+.popup-main {
+    font-size: 14px;
+}
+.popup-main p {
+    margin: 10px 0
+}
+.popup-end {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
