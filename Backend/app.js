@@ -8,6 +8,7 @@ const placesRouter = require('./routes/places')
 app.use(express.json())
 
 
-
+app.listen(5000, ()=> {
+    console.log('Listening on port 5000')
+})
 app.use('/api/v1/places', placesRouter)
-

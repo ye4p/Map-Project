@@ -25,11 +25,11 @@ const Results = ({closeFilterOnly, setCloseFilterOnly}) => {
             <p>Found <span>14</span> results:</p>
         </div>
         <div className="results-list">
-            <SingleResult name='East Lake High School'/>
+            <SingleResult name='fdsafadsfsd'/>
             <SingleResult name='Eassdf'/>
-            <SingleResult name='East Lake High School'/>
-            <SingleResult name='East Lake High School'/>
-            <SingleResult name='East Lake High School'/>
+            <SingleResult name='fdgsdfgsfdgs'/>
+            <SingleResult name='xvcbxcbxcv'/>
+            <SingleResult name='cvxbxvcbdfgs'/>
         </div>
         <div className="results-end">
             <div className="results-end-box">

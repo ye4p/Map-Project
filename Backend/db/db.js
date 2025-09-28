@@ -9,9 +9,9 @@ const pool = new Pool({
   port: 5432,             
 });
 
- pool.query('select * from test', (req,res) => {
-   return console.log(res)
- })
+//  pool.query('select * from places', (req,res) => {
+//    return console.log(res)
+//  })
 
 
 module.exports = pool;
