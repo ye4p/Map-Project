@@ -1,7 +1,7 @@
 //This specific file wasn't created by me, right now I have 20 imported places just to test that everything works correctly.
 
 const axios = require('axios');
-const pool = require('./db/db');
+const pool = require('../db/db');
 
 const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
 

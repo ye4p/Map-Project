@@ -1,3 +1,5 @@
+//Exporting access to db from here
+
 require('dotenv').config()
 const { Pool } = require('pg');
 

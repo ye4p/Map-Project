@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const {getAllPlaces} = require('../controllers/places')
+const {getPlaces} = require('../controllers/places')
 
-router.route('/').get(getAllPlaces)
+router.route('/places').get(getPlaces)
 
-module.exports = router
+module.exports = router 
