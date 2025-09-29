@@ -13,7 +13,7 @@ const getPlaces = (req, res) => {
     if (name) {
         values.push(`%${name}%`)
         conditions.push(`
-        name ILIKE $1
+        name ILIKE $${values.length}
         `)
     }
     if (russian) {
@@ -29,7 +29,7 @@ const getPlaces = (req, res) => {
     if (type) {
         values.push(`${type}`)
         conditions.push(`
-        type = $2
+        type = $${values.length}
         `)
     }
     conditions = conditions.join(' AND ')
