@@ -3,7 +3,11 @@ const pool = require('../db/db.js');
 
 // Shows everything in the table
 const getPlaces = (req, res) => {
-    const {name, russian, ukrainian, type, rating, zeroReviewsInclude} = req.query
+    const {name, russian, ukrainian, type, rating} = req.query
+    let zeroReviewsInclude = true
+    if (req.query.zeroReviewsInclude) {
+    zeroReviewsInclude = req.query.zeroReviewsInclude === 'true';
+    } 
     let query=`SELECT *,
         ST_X(location::geometry) AS lon,
         ST_Y(location::geometry) AS lat
@@ -32,6 +36,17 @@ const getPlaces = (req, res) => {
         type = $${values.length}
         `)
     }
+    if (rating) {
+        values.push(`${rating}`)
+        conditions.push(`
+        rating = $${values.length}
+        `)
+    }
+    if (!zeroReviewsInclude) {
+        conditions.push(`
+        reviews_count > 0
+        `)
+    }
     conditions = conditions.join(' AND ')
 
 
@@ -41,7 +56,7 @@ const getPlaces = (req, res) => {
     }
 
     console.log(query)
-    console.log(values)
+   // console.log(values)
     pool.query(query, values, (err, result) => {
         if (err) {
             console.error(err)
@@ -52,7 +67,12 @@ const getPlaces = (req, res) => {
     })
 }
 
+const createTicket = (req, res) => {
+
+}
+
 
 module.exports = {
     getPlaces,
+    createTicket
 }

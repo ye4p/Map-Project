@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const {getPlaces} = require('../controllers/places')
+const { getPlaces, createTicket} = require('../controllers/places')
 
-router.route('/places').get(getPlaces)
+router.route('/places').get(getPlaces).post(createTicket)
 
 module.exports = router 
