@@ -68,11 +68,24 @@ const getPlaces = (req, res) => {
 }
 
 const createTicket = (req, res) => {
-
+    const {node, description} = req.body
+    pool.query('INSERT INTO tickets (node, description) VALUES ($1, $2)', [node, description], (err, result) => {
+        if (err) {
+            console.error(err)
+            res.status(400).send('Error submitting the ticket')
+        } else {
+            console.log('Ticket submitted successfully')
+            res.status(201).send('Ticket submitted successfully')
+        }
+    })
 }
 
+const createReview = (req, res) => {
+    const {node, review, rating} = req.query
+}
 
 module.exports = {
     getPlaces,
-    createTicket
+    createTicket,
+    createReview
 }
