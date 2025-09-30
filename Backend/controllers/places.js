@@ -68,8 +68,8 @@ const getPlaces = (req, res) => {
 }
 
 const createTicket = (req, res) => {
-    const {node, description} = req.body
-    pool.query('INSERT INTO tickets (node, description) VALUES ($1, $2)', [node, description], (err, result) => {
+    const {id, description} = req.body
+    pool.query('INSERT INTO tickets (place_id, description) VALUES ($1, $2)', [id, description], (err, result) => {
         if (err) {
             console.error(err)
             res.status(400).send('Error submitting the ticket')
@@ -80,12 +80,30 @@ const createTicket = (req, res) => {
     })
 }
 
-const createReview = (req, res) => {
-    const {node, review, rating} = req.query
+const createReview = (req, res) => {        // Need to create db table for reviews.
+    const {id, review, rating} = req.query
+    pool.query(
+        'INSERT INTO reviews (place_id, review, rating) VALUES ($1, $2, $3)', 
+        [id, review, rating],
+        (err, result) => {
+            if (err) {
+            console.error(err)
+            res.status(400).send('Error creating review')
+        } else {
+            console.log('Review created successfully')
+            res.status(201).send('Review created successfully')
+        }
+        }
+    )
+}
+const editReview = (req, res) => {
+    const {id, review, rating} = req.query;
+    
 }
 
 module.exports = {
     getPlaces,
     createTicket,
-    createReview
+    createReview,
+    editReview
 }
