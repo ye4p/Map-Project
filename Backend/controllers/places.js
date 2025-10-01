@@ -96,6 +96,18 @@ const createReview = (req, res) => {        // Need to create db table for revie
         }
     )
 }
+
+const getReview = (req, res) => {
+    const { id: place_id } = req.body
+    pool.query('SELECT * FROM reviews WHERE place_id=$1', [place_id], (err, result) => {
+        if (err) {
+            console.error(err)
+        } else {
+            console.log('Got review data successfully')
+        }
+    })
+}
+
 const editReview = (req, res) => {
     const {id, review, rating} = req.query;
     
@@ -105,5 +117,6 @@ module.exports = {
     getPlaces,
     createTicket,
     createReview,
-    editReview
+    editReview,
+    getReview
 }
