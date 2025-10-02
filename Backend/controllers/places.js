@@ -81,7 +81,8 @@ const createTicket = (req, res) => {
 }
 
 const createReview = (req, res) => {        // Need to create db table for reviews.
-    const {id, review, rating} = req.query
+    const {review, rating} = req.body
+    const { id } = req.query;
     pool.query(
         'INSERT INTO reviews (place_id, review, rating) VALUES ($1, $2, $3)', 
         [id, review, rating],
@@ -98,7 +99,7 @@ const createReview = (req, res) => {        // Need to create db table for revie
 }
 
 const getReview = (req, res) => {
-    const { id: place_id } = req.body
+    const { id: place_id } = req.query
     pool.query('SELECT * FROM reviews WHERE place_id=$1', [place_id], (err, result) => {
         if (err) {
             console.error(err)
@@ -109,8 +110,19 @@ const getReview = (req, res) => {
 }
 
 const editReview = (req, res) => {
-    const {id, review, rating} = req.query;
-    
+    const { id: place_id } = req.query;
+    const {review, rating} = req.body;
+    pool.query(`UPDATE reviews
+        SET review = $1,
+            rating = $2
+            WHERE place_id = $3
+        `, [review, rating, place_id], (err, result) => {
+            if (err) {
+                console.error(err)
+            } else {
+                console.log('Changed review successfully')
+            }
+        })
 }
 
 module.exports = {
