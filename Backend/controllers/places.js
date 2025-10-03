@@ -83,6 +83,7 @@ const createTicket = (req, res) => {
 const createReview = (req, res) => {        // Need to create db table for reviews.
     const {review, rating} = req.body
     const { id } = req.query;
+    //console.log('id: ', id)
     pool.query(
         'INSERT INTO reviews (place_id, review, rating) VALUES ($1, $2, $3)', 
         [id, review, rating],
@@ -103,8 +104,10 @@ const getReview = (req, res) => {
     pool.query('SELECT * FROM reviews WHERE place_id=$1', [place_id], (err, result) => {
         if (err) {
             console.error(err)
+            res.status(404).send({message: 'error'})
         } else {
             console.log('Got review data successfully')
+            res.status(201).send(result.rows)
         }
     })
 }
