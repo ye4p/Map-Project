@@ -5,13 +5,14 @@ import {useState} from 'react'
 import axios from 'axios';
 
 const Search = () => {
-    let searchArray = []
+    const [  searchArray, setSearchArray] = useState([])
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.get('https://jsonplaceholder.typicode.com/posts/1')
             .then(res => {
                 //console.log(res.data);
-                searchArray.push(...res.data)
+                setSearchArray([res.data])
             })
             .catch(err => {
                 console.error(err);
@@ -22,6 +23,9 @@ const Search = () => {
         setFilterOpen(!filterOpen)
        //console.log(filterOpen)
     }
+    useEffect(() => {
+        console.log(searchArray);
+    }, [searchArray]);
 
   return (
     <>
@@ -44,6 +48,7 @@ const Search = () => {
         <Filters
             filterOpen={filterOpen}
             setFilterOpen={setFilterOpen}
+            searchArray={searchArray}
         />
     </div>
     </>
