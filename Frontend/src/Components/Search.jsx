@@ -2,10 +2,20 @@ import React from 'react'
 import './Search.css'
 import Filters from './Filters'
 import {useState} from 'react'
+import axios from 'axios';
 
 const Search = () => {
+    let searchArray = []
     const handleSubmit = (event) => {
         event.preventDefault();
+        axios.get('https://jsonplaceholder.typicode.com/posts/1')
+            .then(res => {
+                //console.log(res.data);
+                searchArray.push(...res.data)
+            })
+            .catch(err => {
+                console.error(err);
+            });
     }
     const [filterOpen, setFilterOpen] = useState(false)
     function testFilter() {

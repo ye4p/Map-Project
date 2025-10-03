@@ -122,8 +122,10 @@ const editReview = (req, res) => {
         `, [review, rating, place_id], (err, result) => {
             if (err) {
                 console.error(err)
+                res.status(404).send({message: 'error'})
             } else {
                 console.log('Changed review successfully')
+                res.status(200).send({message: 'success'})
             }
         })
 }
