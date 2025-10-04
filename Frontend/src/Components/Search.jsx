@@ -15,6 +15,7 @@ const Search = () => {
     const [ zeroReviewInclude, setZeroReviewsInclude ] = useState(true)
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         let paramsObject = {
             name: searchInput,
             russian: russian,
@@ -23,7 +24,7 @@ const Search = () => {
             rating: rating,
             zeroReviewsInclude: zeroReviewInclude
         }
-        event.preventDefault();
+        console.log(paramsObject)
         axios.get('http://localhost:5000/api/v1/places', {
             params: paramsObject
         })

@@ -22,9 +22,18 @@ const Filters = ( {filterOpen, setFilterOpen, searchArray, russian, setRussian, 
   function testOnCheck() {
     setRussian(!russian)
   }
+  function handleChangeRussian(e) {
+    setRussian(e.target.checked)
+  }
+  function handleChangeUkrainian(e) {
+    setUkrainian(e.target.checked)
+  }
   useEffect(() => {
     console.log(russian)
   }, [russian])
+  useEffect(() => {
+    console.log(ukrainian)
+  }, [ukrainian])
   
   return (
     <>
@@ -58,13 +67,18 @@ const Filters = ( {filterOpen, setFilterOpen, searchArray, russian, setRussian, 
         <div className="checkbox-lan">
         <label>
         <input type="checkbox" name="language" value="russian"
+        checked={russian}
+        onChange={handleChangeRussian}
         // onChecked={}
         />
         Russian
       </label>
 
       <label>
-        <input type="checkbox" name="language" value="ukrainian"/>
+        <input type="checkbox" name="language" value="ukrainian"
+          checked={ukrainian}
+          onChange={handleChangeUkrainian}    
+                />
         Ukrainian
       </label>
     
@@ -75,7 +89,7 @@ const Filters = ( {filterOpen, setFilterOpen, searchArray, russian, setRussian, 
       </div>
       </div>
       </div>
-      <Type/>
+      <Type typeOfPlace={typeOfPlace} setTypeOfPlace={setTypeOfPlace}/>
       <Stars/>
       <Review/>
       <Buttons
