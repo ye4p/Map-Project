@@ -80,7 +80,7 @@ const createTicket = (req, res) => {
     })
 }
 
-const createReview = (req, res) => {        // Need to create db table for reviews.
+const createReview = (req, res) => {       
     const {review, rating} = req.body
     const { id } = req.query;
     //console.log('id: ', id)
