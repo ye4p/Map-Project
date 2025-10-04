@@ -1,7 +1,7 @@
 import React from 'react'
 import './SingleResult.css'
 
-const SingleResult = ({singleData}) => {
+const SingleResult = ({singleData}) => { //Now takes real data
   return (
     <div className='single-result'>
         <div className="result-name">

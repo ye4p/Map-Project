@@ -1,18 +1,36 @@
 import React from 'react'
 import './Search.css'
 import Filters from './Filters'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import axios from 'axios';
 
 const Search = () => {
-    const [  searchArray, setSearchArray] = useState([])
-    
+    const [ searchArray, setSearchArray] = useState([])
+
+    const [ searchInput, setSearchInput ] = useState("");
+    const [ russian, setRussian ] = useState(false)
+    const [ ukrainian, setUkrainian ] = useState(false)
+    const [ typeOfPlace, setTypeOfPlace ] = useState("")
+    const [ rating, setRating ] = useState(0)
+    const [ zeroReviewInclude, setZeroReviewsInclude ] = useState(true)
+
     const handleSubmit = (event) => {
+        let paramsObject = {
+            name: searchInput,
+            russian: russian,
+            ukrainian: ukrainian,
+            type: typeOfPlace,
+            rating: rating,
+            zeroReviewsInclude: zeroReviewInclude
+        }
         event.preventDefault();
-        axios.get('https://jsonplaceholder.typicode.com/posts/1')
+        axios.get('http://localhost:5000/api/v1/places', {
+            params: paramsObject
+        })
             .then(res => {
                 //console.log(res.data);
                 setSearchArray([res.data])
+                //console.log(searchArray)
             })
             .catch(err => {
                 console.error(err);
@@ -23,9 +41,9 @@ const Search = () => {
         setFilterOpen(!filterOpen)
        //console.log(filterOpen)
     }
-    useEffect(() => {
-        console.log(searchArray);
-    }, [searchArray]);
+     useEffect(() => {
+         console.log(searchArray);
+     }, [searchArray]);
 
   return (
     <>
@@ -38,7 +56,9 @@ const Search = () => {
                 <i className="fa fa-bars" aria-hidden="true"></i>
             </div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='Enter name of the place'/>
+                <input type="text" placeholder='Enter name of the place' 
+                onChange={(e) => {setSearchInput(e.target.value)}}
+                />
                 <button type='submit'>
                     <p>Search</p>
                     <i className="fa fa-search" aria-hidden="true"></i>
@@ -49,6 +69,16 @@ const Search = () => {
             filterOpen={filterOpen}
             setFilterOpen={setFilterOpen}
             searchArray={searchArray}
+            russian={russian}
+            setRussian={setRussian}
+            ukrainian={ukrainian}
+            setUkrainian={setUkrainian}
+            typeOfPlace={typeOfPlace}
+            setTypeOfPlace={setTypeOfPlace}
+            rating={rating}
+            setRating={setRating}
+            zeroReviewInclude={zeroReviewInclude}
+            setZeroReviewsInclude={setZeroReviewsInclude}
         />
     </div>
     </>

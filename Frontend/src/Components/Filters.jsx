@@ -1,13 +1,13 @@
 import React from 'react'
 import './Filters.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Hoverable from './Hover-text.jsx'
 import Type from './Type.jsx'
 import Stars from './Stars.jsx'
 import Review from './Review.jsx'
 import Buttons from './Buttons.jsx'
 import Results from './Results.jsx'
-const Filters = ( {filterOpen, setFilterOpen, searchArray}) => {
+const Filters = ( {filterOpen, setFilterOpen, searchArray, russian, setRussian, ukrainian, setUkrainian, typeOfPlace, setTypeOfPlace, rating, setRating, zeroReviewsInclude, setZeroReviewsInclude}) => {
   function test() {
     console.log(closeFilterOnly)
   }
@@ -19,6 +19,13 @@ const Filters = ( {filterOpen, setFilterOpen, searchArray}) => {
     setCloseFilterOnly(!closeFilterOnly)
     console.log('changed', closeFilterOnly)
   }
+  function testOnCheck() {
+    setRussian(!russian)
+  }
+  useEffect(() => {
+    console.log(russian)
+  }, [russian])
+  
   return (
     <>
     
@@ -50,7 +57,9 @@ const Filters = ( {filterOpen, setFilterOpen, searchArray}) => {
       <div className="box-lan">
         <div className="checkbox-lan">
         <label>
-        <input type="checkbox" name="language" value="russian"/>
+        <input type="checkbox" name="language" value="russian"
+        // onChecked={}
+        />
         Russian
       </label>
 
