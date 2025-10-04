@@ -2,11 +2,13 @@ import React from 'react'
 import './Results.css'
 import SingleResult from './SingleResult.jsx'
 
-const Results = ({closeFilterOnly, setCloseFilterOnly}) => {
+const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray}) => {
 
     function handleArrow() {
         setCloseFilterOnly(!closeFilterOnly)
     }
+    const [ page, setPage] = useState(0)
+    let index = 0;
 
   return (
     <div className='results-window'
@@ -25,11 +27,11 @@ const Results = ({closeFilterOnly, setCloseFilterOnly}) => {
             <p>Found <span>14</span> results:</p>
         </div>
         <div className="results-list">
-            <SingleResult name='fdsafadsfsd'/>
-            <SingleResult name='Eassdf'/>
-            <SingleResult name='fdgsdfgsfdgs'/>
-            <SingleResult name='xvcbxcbxcv'/>
-            <SingleResult name='cvxbxvcbdfgs'/>
+            <SingleResult singleData={searchArray[i]}/>
+            <SingleResult singleData={searchArray[i]}/>
+            <SingleResult singleData={searchArray[i]}/>
+            <SingleResult singleData={searchArray[i]}/>
+            <SingleResult singleData={searchArray[i]}/>
         </div>
         <div className="results-end">
             <div className="results-end-box">

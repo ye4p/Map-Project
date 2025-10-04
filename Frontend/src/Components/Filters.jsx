@@ -7,7 +7,7 @@ import Stars from './Stars.jsx'
 import Review from './Review.jsx'
 import Buttons from './Buttons.jsx'
 import Results from './Results.jsx'
-const Filters = ( {filterOpen, setFilterOpen}) => {
+const Filters = ( {filterOpen, setFilterOpen, searchArray}) => {
   function test() {
     console.log(closeFilterOnly)
   }
@@ -80,6 +80,7 @@ const Filters = ( {filterOpen, setFilterOpen}) => {
       <Results 
         closeFilterOnly={closeFilterOnly}
         setCloseFilterOnly={setCloseFilterOnly}
+        searchArray={searchArray}
       />
       
     </div>

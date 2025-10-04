@@ -2,16 +2,30 @@ import React from 'react'
 import './Search.css'
 import Filters from './Filters'
 import {useState} from 'react'
+import axios from 'axios';
 
 const Search = () => {
+    const [  searchArray, setSearchArray] = useState([])
+    
     const handleSubmit = (event) => {
         event.preventDefault();
+        axios.get('https://jsonplaceholder.typicode.com/posts/1')
+            .then(res => {
+                //console.log(res.data);
+                setSearchArray([res.data])
+            })
+            .catch(err => {
+                console.error(err);
+            });
     }
     const [filterOpen, setFilterOpen] = useState(false)
     function testFilter() {
         setFilterOpen(!filterOpen)
        //console.log(filterOpen)
     }
+    useEffect(() => {
+        console.log(searchArray);
+    }, [searchArray]);
 
   return (
     <>
@@ -34,6 +48,7 @@ const Search = () => {
         <Filters
             filterOpen={filterOpen}
             setFilterOpen={setFilterOpen}
+            searchArray={searchArray}
         />
     </div>
     </>

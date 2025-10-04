@@ -1,7 +1,7 @@
 import React from 'react'
 import './SingleResult.css'
 
-const SingleResult = ({name}) => {
+const SingleResult = ({singleData}) => {
   return (
     <div className='single-result'>
         <div className="result-name">
