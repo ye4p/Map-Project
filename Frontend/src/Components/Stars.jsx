@@ -1,6 +1,6 @@
 import React from 'react'
 import './Stars.css'
-const Stars = () => {
+const Stars = ( { rating, setRating} ) => {
         
     function getId(e) {         //Get the id # from the start element
         let ID = e.split('star')[1]
@@ -38,7 +38,7 @@ const Stars = () => {
         //let clickedStar = isChecked(e)
         let clickedStar = getId(e.currentTarget.id)
         let arrStars = loopThroughStars()
-        //console.log('clickedStar: ', clickedStar)
+        // console.log('clickedStar: ', clickedStar)
         //console.log('arrStars: ', arrStars)
         let lastStar;
         if (arrStars.length > 0) {
@@ -48,6 +48,7 @@ const Stars = () => {
         }
         emptyStars()
         checkStars(Number(clickedStar)+1)
+        setRating(Number(clickedStar))
         return
     }
 

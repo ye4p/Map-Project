@@ -1,12 +1,15 @@
 import React from "react";
 import './Type.css'
+import { useState} from 'react'
 
 const Type = ( { typeOfPlace, setTypeOfPlace } ) => {
     function handleChangeType(e) {
         setTypeOfPlace(e.target.value)
         // console.dir(e)
     }
-
+    useState(() => {
+        console.log(typeOfPlace)
+    }, [typeOfPlace])
     return (
         <div className="type-place">
             <div className="type-title">

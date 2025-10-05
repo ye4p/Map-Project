@@ -11,19 +11,34 @@ const Search = () => {
     const [ russian, setRussian ] = useState(false)
     const [ ukrainian, setUkrainian ] = useState(false)
     const [ typeOfPlace, setTypeOfPlace ] = useState("")
-    const [ rating, setRating ] = useState(0)
-    const [ zeroReviewInclude, setZeroReviewsInclude ] = useState(true)
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        let paramsObject = {
+    const [ rating, setRating ] = useState(3)
+    const [ zeroReviewsInclude, setZeroReviewsInclude ] = useState(true)
+    const [ paramsObject, setParamsObject ] = useState({
             name: searchInput,
             russian: russian,
             ukrainian: ukrainian,
             type: typeOfPlace,
             rating: rating,
-            zeroReviewsInclude: zeroReviewInclude
+            zeroReviewsInclude: zeroReviewsInclude
+    })
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        let paramsObject = {
+            name: searchInput,
+            //russian: russian,
+            //ukrainian: ukrainian,
+            type: typeOfPlace,
+            //rating: rating,
+            //zeroReviewsInclude: zeroReviewsInclude
         }
+        // let paramsObject = {
+        //     name: searchInput,
+        //     russian: russian,
+        //     ukrainian: ukrainian,
+        //     type: typeOfPlace,
+        //     rating: rating,
+        //     zeroReviewsInclude: zeroReviewsInclude
+        // }
         console.log(paramsObject)
         axios.get('http://localhost:5000/api/v1/places', {
             params: paramsObject
@@ -78,8 +93,9 @@ const Search = () => {
             setTypeOfPlace={setTypeOfPlace}
             rating={rating}
             setRating={setRating}
-            zeroReviewInclude={zeroReviewInclude}
+            zeroReviewsInclude={zeroReviewsInclude}
             setZeroReviewsInclude={setZeroReviewsInclude}
+            paramsObject={paramsObject}
         />
     </div>
     </>

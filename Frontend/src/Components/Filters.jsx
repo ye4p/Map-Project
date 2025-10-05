@@ -7,7 +7,10 @@ import Stars from './Stars.jsx'
 import Review from './Review.jsx'
 import Buttons from './Buttons.jsx'
 import Results from './Results.jsx'
-const Filters = ( {filterOpen, setFilterOpen, searchArray, russian, setRussian, ukrainian, setUkrainian, typeOfPlace, setTypeOfPlace, rating, setRating, zeroReviewsInclude, setZeroReviewsInclude}) => {
+const Filters = ( {
+  filterOpen, setFilterOpen, searchArray, russian, setRussian, 
+  ukrainian, setUkrainian, typeOfPlace, setTypeOfPlace, rating, 
+  setRating, zeroReviewsInclude, setZeroReviewsInclude, paramsObject}) => {
   function test() {
     console.log(closeFilterOnly)
   }
@@ -90,14 +93,19 @@ const Filters = ( {filterOpen, setFilterOpen, searchArray, russian, setRussian, 
       </div>
       </div>
       <Type typeOfPlace={typeOfPlace} setTypeOfPlace={setTypeOfPlace}/>
-      <Stars/>
-      <Review/>
+      <Stars rating={rating} setRating={setRating}/>
+      <Review
+        zeroReviewsInclude = {zeroReviewsInclude}
+        setZeroReviewsInclude = {setZeroReviewsInclude}
+
+      />
       <Buttons
         filterOpen={filterOpen}
         setFilterOpen={setFilterOpen}
         closeFilterOnly={closeFilterOnly}
         setCloseFilterOnly={setCloseFilterOnly}
         closeFilterOnly_func={closeFilterOnly_func}
+        paramsObject={paramsObject}
       />
     </div>
       <Results 

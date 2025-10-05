@@ -1,6 +1,15 @@
 import React from 'react'
 import './Review.css'
-const Review = () => {
+import {useEffect} from 'react'
+
+const Review = ( { zeroReviewsInclude, setZeroReviewsInclude } ) => {
+  function handleSetZeroReviewsInclude() {
+      setZeroReviewsInclude(!zeroReviewsInclude)
+  }
+  useEffect(() => {
+    console.log(zeroReviewsInclude)
+  }, [zeroReviewsInclude])
+  
   return (
     <div className='review-box'>
         <div className="review-title">
@@ -9,7 +18,10 @@ const Review = () => {
             </span>
         </div>
         <div className="review">
-            <input type="checkbox" name="review_minimum" />
+            <input type="checkbox" name="review_minimum"
+              checked={!zeroReviewsInclude}
+              onChange={handleSetZeroReviewsInclude}
+            />
         </div>
     </div>
   )

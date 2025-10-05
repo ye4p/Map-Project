@@ -1,15 +1,37 @@
 import React from 'react'
 import './Buttons.css'
-const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly, closeFilterOnly_func}) => {
+import axios from 'axios'
+
+const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly, closeFilterOnly_func, paramsObject}) => {
     function changeFilter() {
         setFilterOpen(!filterOpen)
         console.log(filterOpen)
+    }
+    const handleFind = () => {
+      
+      // let paramsObject = {
+      //       name: searchInput,
+      //       russian: russian,
+      //       ukrainian: ukrainian,
+      //       type: typeOfPlace,
+      //       rating: rating,
+      //       zeroReviewsInclude: zeroReviewsInclude
+      //   }
+        axios.get('http://localhost:5000/api/v1/places', {
+          params: paramsObject
+        }).then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
+    function handleFindClick(e) {
+      e.preventDefault()
+      closeFilterOnly_func()
+      handleFind()
     }
   return (
     <div className='buttons-end'>
         <button className='cancel' onClick={changeFilter}>Cancel</button>
         <button className='find'
-        onClick={closeFilterOnly_func}
+        onClick={handleFindClick}
         >Find</button>
     </div>
   )
