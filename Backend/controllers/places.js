@@ -20,29 +20,29 @@ const getPlaces = (req, res) => {
         name ILIKE $${values.length}
         `)
     }
-    if (russian) {
+    if (russian && russian!='false') {
         conditions.push(`
         russian = true
         `)
     }
-    if (ukrainian) {
+    if (ukrainian && ukrainian!='false') {
         conditions.push(`
         ukrainian = true
         `)
     }
-    if (type) {
+    if (type && type != '') {
         values.push(`${type}`)
         conditions.push(`
         type = $${values.length}
         `)
     }
-    if (rating) {
+    if (rating || rating>=0 ) {
         values.push(`${rating}`)
         conditions.push(`
         rating = $${values.length}
         `)
     }
-    if (!zeroReviewsInclude) {
+     if (!zeroReviewsInclude) {
         conditions.push(`
         reviews_count > 0
         `)

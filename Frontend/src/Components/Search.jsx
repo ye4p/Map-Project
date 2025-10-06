@@ -23,29 +23,21 @@ const Search = () => {
     })
     const handleSubmit = (event) => {
         event.preventDefault();
-        let paramsObject = {
+        let paramsObject2 = {
             name: searchInput,
-            //russian: russian,
-            //ukrainian: ukrainian,
-            type: typeOfPlace,
-            //rating: rating,
-            //zeroReviewsInclude: zeroReviewsInclude
+            // russian: russian,
+            // ukrainian: ukrainian,
+            // type: typeOfPlace,
+            // rating: rating,
+            // zeroReviewsInclude: zeroReviewsInclude
         }
-        // let paramsObject = {
-        //     name: searchInput,
-        //     russian: russian,
-        //     ukrainian: ukrainian,
-        //     type: typeOfPlace,
-        //     rating: rating,
-        //     zeroReviewsInclude: zeroReviewsInclude
-        // }
-        console.log(paramsObject)
+        console.log(paramsObject2)
         axios.get('http://localhost:5000/api/v1/places', {
-            params: paramsObject
+            params: paramsObject2
         })
             .then(res => {
-                //console.log(res.data);
-                setSearchArray([res.data])
+                console.log(res.data);
+                //setSearchArray([res.data])
                 //console.log(searchArray)
             })
             .catch(err => {
@@ -58,8 +50,16 @@ const Search = () => {
        //console.log(filterOpen)
     }
      useEffect(() => {
-         console.log(searchArray);
-     }, [searchArray]);
+        setParamsObject({
+            name: searchInput,
+            russian: russian,
+            ukrainian: ukrainian,
+            type: typeOfPlace,
+            rating: rating,
+            zeroReviewsInclude: zeroReviewsInclude
+    })
+        
+     }, [searchInput, russian, ukrainian, typeOfPlace, rating, zeroReviewsInclude]);
 
   return (
     <>

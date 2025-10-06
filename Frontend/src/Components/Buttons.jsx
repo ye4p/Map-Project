@@ -21,6 +21,7 @@ const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly
           params: paramsObject
         }).then(res => console.log(res))
         .catch(err => console.log(err))
+        console.log(paramsObject)
     }
     function handleFindClick(e) {
       e.preventDefault()
