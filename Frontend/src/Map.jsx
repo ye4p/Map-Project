@@ -21,7 +21,8 @@ function ZoomControlBottomRight() {
   return null;
 }
 
-const Map = () => {
+const Map = ( { popups, setPopups } ) => {
+
   return (
    
     <>

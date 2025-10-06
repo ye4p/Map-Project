@@ -4,14 +4,20 @@ import Map from './Map.jsx'
 import UI from './UI.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
   const position = [51.505, -0.09]
-      
+    
+  const [ popups, setPopups] = useState([])
   
   return (
     <>
-        <Map/>
-        <UI/>
+        <Map
+        popups={popups}
+        setPopeps={setPopups}
+        />
+        <UI
+        popups={popups}
+        setPopups={setPopups}
+        />
     </>
   )
 }

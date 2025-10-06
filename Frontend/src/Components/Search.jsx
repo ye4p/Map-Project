@@ -4,8 +4,8 @@ import Filters from './Filters'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 
-const Search = () => {
-    const [ searchArray, setSearchArray] = useState([])
+const Search = ( { popups, setPopups } ) => {
+    // const [ searchArray, setSearchArray] = useState([])
 
     const [ searchInput, setSearchInput ] = useState("");
     const [ russian, setRussian ] = useState(false)
@@ -37,6 +37,7 @@ const Search = () => {
         })
             .then(res => {
                 console.log(res.data);
+                setPopups(res.data);
                 //setSearchArray([res.data])
                 //console.log(searchArray)
             })
@@ -48,6 +49,21 @@ const Search = () => {
     function testFilter() {
         setFilterOpen(!filterOpen)
        //console.log(filterOpen)
+    }
+    
+    function displayNodes() {
+
+    }
+    function displaySingleNode(node) {
+        const lat = node.lat;
+        const lon = node.lon;
+        popupData = {
+            position: [lat, lon],
+            content: {
+
+            }
+        }
+
     }
      useEffect(() => {
         setParamsObject({

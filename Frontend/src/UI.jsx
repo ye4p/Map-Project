@@ -1,9 +1,12 @@
 import React from 'react'
 import Search from './Components/Search'
-const UI = () => {
+const UI = ( { popups, setPopups } ) => {
   return (
     <div className='UI'>
-        <Search/>
+        <Search
+        popups={popups}
+        setPopups={setPopups}
+        />
     </div>
   )
 }
