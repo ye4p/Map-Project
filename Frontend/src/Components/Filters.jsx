@@ -10,7 +10,9 @@ import Results from './Results.jsx'
 const Filters = ( {
   filterOpen, setFilterOpen, searchArray, russian, setRussian, 
   ukrainian, setUkrainian, typeOfPlace, setTypeOfPlace, rating, 
-  setRating, zeroReviewsInclude, setZeroReviewsInclude, paramsObject}) => {
+  setRating, zeroReviewsInclude, setZeroReviewsInclude, paramsObject,
+  popups, setPopups
+}) => {
   function test() {
     console.log(closeFilterOnly)
   }
@@ -106,6 +108,8 @@ const Filters = ( {
         setCloseFilterOnly={setCloseFilterOnly}
         closeFilterOnly_func={closeFilterOnly_func}
         paramsObject={paramsObject}
+        popups={popups}
+        setPopups={setPopups}
       />
     </div>
       <Results 

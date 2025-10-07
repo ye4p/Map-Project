@@ -22,6 +22,17 @@ function ZoomControlBottomRight() {
 }
 
 const Map = ( { popups, setPopups } ) => {
+  useEffect(() => {
+    if (popups.length>0) {
+
+    }
+  }, [ popups ] );
+  function showPopups() {
+
+  }
+  function hidePopups() {
+
+  }
 
   return (
    
@@ -46,6 +57,16 @@ const Map = ( { popups, setPopups } ) => {
           <CustomPopup/>
         </Popup>
       </Marker>
+
+      {popups.map((popup) => (
+        <Marker>
+          <Popup>
+
+            
+            <CustomPopup/>
+          </Popup>
+        </Marker>
+      ))}
     </MapContainer>
   
     </>

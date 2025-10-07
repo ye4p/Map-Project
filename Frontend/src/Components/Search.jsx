@@ -100,7 +100,7 @@ const Search = ( { popups, setPopups } ) => {
         <Filters
             filterOpen={filterOpen}
             setFilterOpen={setFilterOpen}
-            searchArray={searchArray}
+           // searchArray={searchArray}
             russian={russian}
             setRussian={setRussian}
             ukrainian={ukrainian}
@@ -112,6 +112,8 @@ const Search = ( { popups, setPopups } ) => {
             zeroReviewsInclude={zeroReviewsInclude}
             setZeroReviewsInclude={setZeroReviewsInclude}
             paramsObject={paramsObject}
+            popups={popups}
+            setPopups={setPopups}
         />
     </div>
     </>

@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 import './Results.css'
 import SingleResult from './SingleResult.jsx'
 
-const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray}) => {
+const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray, popups}) => {
 
     function handleArrow() {
         setCloseFilterOnly(!closeFilterOnly)
@@ -27,11 +27,11 @@ const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray}) => {
             <p>Found <span>14</span> results:</p>
         </div>
         <div className="results-list">
+            {/* <SingleResult singleData={searchArray[index]}/>
             <SingleResult singleData={searchArray[index]}/>
             <SingleResult singleData={searchArray[index]}/>
             <SingleResult singleData={searchArray[index]}/>
-            <SingleResult singleData={searchArray[index]}/>
-            <SingleResult singleData={searchArray[index]}/>
+            <SingleResult singleData={searchArray[index]}/> */}
         </div>
         <div className="results-end">
             <div className="results-end-box">

@@ -2,7 +2,7 @@ import React from 'react'
 import './Buttons.css'
 import axios from 'axios'
 
-const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly, closeFilterOnly_func, paramsObject}) => {
+const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly, closeFilterOnly_func, paramsObject, popups, setPopups}) => {
     function changeFilter() {
         setFilterOpen(!filterOpen)
         console.log(filterOpen)
@@ -19,7 +19,7 @@ const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly
       //   }
         axios.get('http://localhost:5000/api/v1/places', {
           params: paramsObject
-        }).then(res => console.log(res))
+        }).then(res => setPopups(res.data))
         .catch(err => console.log(err))
         console.log(paramsObject)
     }
