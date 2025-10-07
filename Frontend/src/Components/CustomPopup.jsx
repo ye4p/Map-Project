@@ -1,20 +1,20 @@
 import React from 'react';
 import './CustomPopup.css'
 
-const CustomPopup = () => {
+const CustomPopup = ( { name, type, russian, ukrainian, rating, description, address } ) => {
     return (
     <div className="popup-content">
       <div className="popup-header">
-        <h2>Name of the place</h2>
-        <div class="availability">
-          <p>🇷🇺: <span>✅</span></p>
-          <p>🇺🇦: <span>❌</span></p>
+        <h2>{name}</h2>
+        <div className="availability">
+          <p>🇷🇺: <span>{russian ? '✅' : '❌'}</span></p>
+          <p>🇺🇦: <span>{ukrainian ? '✅' : '❌'}</span></p>
         </div>
       </div>
       <div className="popup-main">
-        <p className="popup-type">Type of the place: <span>Restaurant</span></p>
-        <p className="popup-adress">Address: <span>2923 Tampa Street Ap A1</span></p>
-        <p className="popup-info">Additional info: <span>bla bla bla</span></p>
+        <p className="popup-type">Type of the place: <span>{type}</span></p>
+        <p className="popup-adress">Address: <span>{address}</span></p>
+        <p className="popup-info">Additional info: <span>{description}</span></p>
       </div>
       <div className="popup-end">
         <button
@@ -22,6 +22,11 @@ const CustomPopup = () => {
           alert('add info')
         }}
         >Add missing data</button>
+        <button
+        onClick={()=> {
+          alert('add review')
+        }}
+        >Leave review</button>
       </div>
       
     </div>

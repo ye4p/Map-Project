@@ -22,7 +22,7 @@ const Filters = ( {
   const [closeFilterOnly, setCloseFilterOnly] = useState(false)
   function closeFilterOnly_func() {
     setCloseFilterOnly(!closeFilterOnly)
-    console.log('changed', closeFilterOnly)
+   // console.log('changed', closeFilterOnly)
   }
   function testOnCheck() {
     setRussian(!russian)
@@ -34,10 +34,10 @@ const Filters = ( {
     setUkrainian(e.target.checked)
   }
   useEffect(() => {
-    console.log(russian)
+  // console.log(russian)
   }, [russian])
   useEffect(() => {
-    console.log(ukrainian)
+  //  console.log(ukrainian)
   }, [ukrainian])
   
   return (

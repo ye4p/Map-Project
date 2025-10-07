@@ -2,14 +2,14 @@ import React from 'react'
 import { MapContainer, TileLayer, useMap, Marker, Popup} from 'react-leaflet'
 import './Map.css'
 import { Control } from 'leaflet'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import L from "leaflet";
 import CustomPopup from './Components/CustomPopup';
 
 // This is to place zoomin/zoom out button at the bottom right corner instead of the default one at the top left.
 function ZoomControlBottomRight() {
   const map = useMap();
-
+  
   useEffect(() => {
     L.control
       .zoom({
@@ -22,6 +22,9 @@ function ZoomControlBottomRight() {
 }
 
 const Map = ( { popups, setPopups } ) => {
+    
+  const [ filteredPopups, setFilteredPopups ] = useState([])
+
   useEffect(() => {
     if (popups.length>0) {
 
@@ -32,6 +35,18 @@ const Map = ( { popups, setPopups } ) => {
   }
   function hidePopups() {
 
+  }
+  function filterPopups(arr) {
+    let filteredArr=[]
+    for (var i = 0; i< arr.length; i++) {
+      if( typeof arr[i].lat === 'number' &&     // Conditions to check for each individual node.
+          typeof arr[i].lon === 'number' &&
+          arr[i].name !== ''
+        ) {
+        filteredArr.push(arr[i])
+      }
+    }
+    setFilteredPopups(filteredArr)
   }
 
   return (
@@ -58,12 +73,26 @@ const Map = ( { popups, setPopups } ) => {
         </Popup>
       </Marker>
 
-      {popups.map((popup) => (
-        <Marker>
-          <Popup>
-
+      {filteredPopups.map((popup) => (
+        <Marker
+          key={popup.id}
+          position={[popup.lat, popup.lon]}
+        >
+          <Popup
+            style={{width: '270px'}}
+            maxWidth={270}
+          >
             
-            <CustomPopup/>
+            <CustomPopup
+              name={popup.name}
+              type={popup.type}
+              russian={popup.russian}
+              ukrainian={popup.ukrainian}
+              rating={popup.rating}
+              description={popup.description}
+              address={popup.address}
+
+            />
           </Popup>
         </Marker>
       ))}

@@ -8,7 +8,7 @@ const Type = ( { typeOfPlace, setTypeOfPlace } ) => {
         // console.dir(e)
     }
     useState(() => {
-        console.log(typeOfPlace)
+      //  console.log(typeOfPlace)
     }, [typeOfPlace])
     return (
         <div className="type-place">

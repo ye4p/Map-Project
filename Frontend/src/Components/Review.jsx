@@ -7,7 +7,7 @@ const Review = ( { zeroReviewsInclude, setZeroReviewsInclude } ) => {
       setZeroReviewsInclude(!zeroReviewsInclude)
   }
   useEffect(() => {
-    console.log(zeroReviewsInclude)
+   // console.log(zeroReviewsInclude)
   }, [zeroReviewsInclude])
   
   return (
