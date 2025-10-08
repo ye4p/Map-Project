@@ -48,7 +48,9 @@ const Map = ( { popups, setPopups } ) => {
     }
     setFilteredPopups(filteredArr)
   }
-
+  useEffect(() => {
+    console.log(popups)
+  }, [popups])
   return (
    
     <>
@@ -73,7 +75,7 @@ const Map = ( { popups, setPopups } ) => {
         </Popup>
       </Marker>
 
-      {filteredPopups.map((popup) => (
+      {popups.map((popup) => (      //Change to filtered popups later
         <Marker
           key={popup.id}
           position={[popup.lat, popup.lon]}

@@ -3,6 +3,7 @@ import './Search.css'
 import Filters from './Filters'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
+import dataArr from '../../data-test'
 
 const Search = ( { popups, setPopups } ) => {
     // const [ searchArray, setSearchArray] = useState([])
@@ -11,7 +12,7 @@ const Search = ( { popups, setPopups } ) => {
     const [ russian, setRussian ] = useState(false)
     const [ ukrainian, setUkrainian ] = useState(false)
     const [ typeOfPlace, setTypeOfPlace ] = useState("")
-    const [ rating, setRating ] = useState(3)
+    const [ rating, setRating ] = useState(0)
     const [ zeroReviewsInclude, setZeroReviewsInclude ] = useState(true)
     const [ paramsObject, setParamsObject ] = useState({
             name: searchInput,
@@ -38,6 +39,7 @@ const Search = ( { popups, setPopups } ) => {
             .then(res => {
                 console.log(res.data);
                 setPopups(res.data);
+                dataArr.push(...res.data)
                 //setSearchArray([res.data])
                 //console.log(searchArray)
             })
