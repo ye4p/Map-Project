@@ -17,12 +17,12 @@ const CustomPopup = ( { name, type, russian, ukrainian, rating, description, add
         <p className="popup-info">Additional info: <span>{description}</span></p>
       </div>
       <div className="popup-end">
-        <button
+        <button className='button-data'
         onClick={() => {
           alert('add info')
         }}
         >Add missing data</button>
-        <button
+        <button className='button-review'
         onClick={()=> {
           alert('add review')
         }}

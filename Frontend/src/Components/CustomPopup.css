@@ -25,8 +25,31 @@
     margin: 10px 0
 }
 .popup-end {
-    height: 100%;
+    position: absolute;
+    /* height: 100%; */
+    bottom: 10px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: end;
+    left: 0px;
+    gap: 15px;
+}
+.popup-end button {
+    border: 1px solid black;
+    background: none;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.popup-end .button-data {
+    border: 1px solid #149fd6;
+    background: #149fd6;
+    color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.popup-end .button-review {
+    border: 1px solid #dfdfdf;
+    background: #dfdfdf;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
