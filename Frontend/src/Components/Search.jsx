@@ -81,7 +81,10 @@ const Search = ( { popups, setPopups } ) => {
 
   return (
     <>
-    <div className='left-window'>
+    <div className='left-window'
+    style={{
+        height: filterOpen ? '800' : 'auto'
+    }}>
         <div className='search-form'>
             <div 
                 className="filter-bars"

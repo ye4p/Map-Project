@@ -46,7 +46,8 @@ const Filters = ( {
     <div className="white-menu"
     style={{
         opacity: filterOpen ? 1 : 0,
-        pointerEvents: filterOpen ? 'auto' : 'none'
+        pointerEvents: filterOpen ? 'auto' : 'none',
+         display: filterOpen ? 'flex' : 'none'
       }}
     >
       <div className="close-button">
