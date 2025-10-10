@@ -1,0 +1,11 @@
+.leave-review-box {
+    position: fixed;
+    z-index: 99999999;
+    height: 100vh;
+    width: 100vw;
+}
+.leave-review-box .background {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.501);
+}

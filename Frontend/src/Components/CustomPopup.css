@@ -47,9 +47,19 @@
     background: #149fd6;
     color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s ease all;
+}
+.popup-end .button-data:hover {
+    background: #6cc6e9;
+    border: 1px solid #6cc6e9;
 }
 .popup-end .button-review {
     border: 1px solid #dfdfdf;
     background: #dfdfdf;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s ease all;
+}
+.popup-end .button-review:hover {
+    background: #e9e9e9;
+    border: 1px solid #e9e9e9;
 }
