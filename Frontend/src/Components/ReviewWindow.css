@@ -3,9 +3,32 @@
     z-index: 99999999;
     height: 100vh;
     width: 100vw;
+    left: 0;
+    top: 0;
 }
 .leave-review-box .background {
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, 0.501);
+}
+.leave-review-box .leave-review-window {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.leave-review-box .leave-review-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    background:  white;
+    height: 400px;
+    width: 700px;
+    border-radius: 20px;
 }
