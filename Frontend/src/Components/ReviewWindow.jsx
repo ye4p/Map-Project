@@ -1,7 +1,13 @@
 import React from 'react'
 import './ReviewWindow.css'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+
 
 const ReviewWindow = () => {
+
+  const [ ratingSend, setRatingSend] = useState(null)
+  const [ reviewText, setReviewText] =useState('')
 
   function getId(e) {         //Get the id # from the start element
         let ID = e.split('rstar')[1]
@@ -49,12 +55,29 @@ const ReviewWindow = () => {
         }
         emptyStars()
         checkStars(Number(clickedStar)+1)
-        setRating(Number(clickedStar))
+        setRatingSend(Number(clickedStar))
         return
     }
 
     function test() {               // test function
     console.log(document.getElementById(`star1`).classList)
+    }
+    useEffect(() => {
+      console.log('ratingSend value: ', ratingSend)
+    }, [ratingSend])
+    useEffect(() => {
+      console.log('reviewText value: ', reviewText)
+    }, [reviewText])
+
+    function handleCreateReview() {
+      axios.post('http://localhost:5000/api/v1/places/query', {
+        params: {
+          id: 'add that',
+          review: reviewText,
+          rating: ratingSend
+        }
+      }).then(res => console.log(res))
+        .catch(err => console.error(err))
     }
 
   return (
@@ -69,9 +92,13 @@ const ReviewWindow = () => {
             <span className="fa fa-star" id='rstar4' onClick={handleClick}></span>
             <span className="fa fa-star" id='rstar5' onClick={handleClick}></span>
           </div>
-          <textarea name="review" id="review-input" placeholder='Enter your review here...'></textarea>
+          <textarea name="review" id="review-input" placeholder='Enter your review here...'
+            onChange={(e) => {setReviewText(e.target.value)}}
+          ></textarea>
           <div className="leave-review-button">
-            <button>Send</button>
+            <button
+            onClick={handleCreateReview}
+            >Send</button>
           </div>
         </div>
       </div>

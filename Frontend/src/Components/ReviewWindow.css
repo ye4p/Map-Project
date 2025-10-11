@@ -23,12 +23,42 @@
 }
 .leave-review-box .leave-review-modal {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: start;
     position: absolute;
     flex-direction: column;
     background:  white;
     height: 400px;
     width: 700px;
     border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 00px;
+    padding-bottom: 15px;
+}
+.leave-review-modal #review-input {
+    height: 100%;
+    margin: 20px;
+    width: 600px;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 15px;
+    resize: none;
+}
+.leave-review-modal .leave-review-button {
+    display: flex;
+    justify-content: end;
+    width: 620px;
+}
+.leave-review-modal .leave-review-button button {
+    border: none;
+    background: #7ccff5;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s ease all;
+}
+.leave-review-modal .leave-review-button button:hover {
+    background: #50b9ff;
 }
