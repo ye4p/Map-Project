@@ -21,7 +21,7 @@ function ZoomControlBottomRight() {
   return null;
 }
 
-const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeId, setPlaceId } ) => {
+const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeId, setPlaceId, ticketWindowShow, setTicketWindowShow } ) => {
     
   const [ filteredPopups, setFilteredPopups ] = useState([])
 
@@ -98,6 +98,8 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
               id={popup.id}
               placeId={placeId}
               setPlaceId={setPlaceId}
+              ticketWindowShow={ticketWindowShow}
+              setTicketWindowShow={setTicketWindowShow}
             />
           </Popup>
         </Marker>

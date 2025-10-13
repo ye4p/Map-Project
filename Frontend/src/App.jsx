@@ -8,6 +8,7 @@ function App() {
     
   const [ popups, setPopups] = useState([])
   const [ reviewWindowShow, setReviewWindowShow] = useState(false)
+  const [ ticketWindowShow, setTicketWindowShow] = useState(true)
   const [ placeId, setPlaceId] = useState('')  
 
   useEffect(() => {
@@ -23,6 +24,8 @@ function App() {
         setReviewWindowShow={setReviewWindowShow}
         placeId={placeId}
         setPlaceId={setPlaceId}
+        ticketWindowShow={ticketWindowShow}
+        setTicketWindowShow={setTicketWindowShow}
         />
         <UI
         popups={popups}
@@ -31,6 +34,8 @@ function App() {
         setReviewWindowShow={setReviewWindowShow}
         placeId={placeId}
         setPlaceId={setPlaceId}
+        ticketWindowShow={ticketWindowShow}
+        setTicketWindowShow={setTicketWindowShow}
         />
     </>
   )

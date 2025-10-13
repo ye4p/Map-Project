@@ -3,7 +3,7 @@ import './CustomPopup.css'
 
 const CustomPopup = ( { name, type, russian, ukrainian, rating, description, address, 
                         reviewWindowShow, setReviewWindowShow,
-                        id, placeId, setPlaceId
+                        id, placeId, setPlaceId, ticketWindowShow, setTicketWindowShow 
                       } ) => {
   function openReviewModal(name, type, russian, ukrainian, rating, description, address) {
     setReviewWindowShow(true)
