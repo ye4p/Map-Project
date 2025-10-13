@@ -29,20 +29,38 @@
     flex-direction: column;
     background:  white;
     height: 400px;
-    width: 700px;
+    width: 660px;
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px 30px 10px 10px;
     margin-bottom: 00px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 .leave-review-modal #review-input {
     height: 100%;
-    margin: 20px;
+    margin: 20px 20px 10px 20px;
     width: 600px;
     padding: 20px;
     font-size: 16px;
     border-radius: 15px;
     resize: none;
+}
+.leave-review-start {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+}
+.leave-review-start .leave-reivew-close-btn button {
+    border: none;
+    background: none;
+    transition: 0.3s ease all;
+}
+.leave-review-start .leave-reivew-close-btn button:hover {
+    transform: scale(1.05);
+}
+.leave-review-start .leave-reivew-close-btn button i {
+    font-size: 32px;
 }
 .leave-review-modal .leave-review-button {
     display: flex;

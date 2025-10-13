@@ -1,7 +1,14 @@
 import React from 'react';
 import './CustomPopup.css'
 
-const CustomPopup = ( { name, type, russian, ukrainian, rating, description, address } ) => {
+const CustomPopup = ( { name, type, russian, ukrainian, rating, description, address, 
+                        reviewWindowShow, setReviewWindowShow,
+                        id, placeId, setPlaceId
+                      } ) => {
+  function openReviewModal(name, type, russian, ukrainian, rating, description, address) {
+    setReviewWindowShow(true)
+    setPlaceId(id)
+  }
     return (
     <div className="popup-content">
       <div className="popup-header">
@@ -23,9 +30,7 @@ const CustomPopup = ( { name, type, russian, ukrainian, rating, description, add
         }}
         >Add missing data</button>
         <button className='button-review'
-        onClick={()=> {
-          alert('add review')
-        }}
+        onClick={openReviewModal}
         >Leave review</button>
       </div>
       

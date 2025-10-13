@@ -81,9 +81,11 @@ const createTicket = (req, res) => {
 }
 
 const createReview = (req, res) => {       
-    const {review, rating} = req.body
+    const { review, rating} = req.body
     const { id } = req.query;
-    //console.log('id: ', id)
+    console.log('id: ', id)
+    console.log('review: ', review)
+    console.log('rating: ', rating)
     pool.query(
         'INSERT INTO reviews (place_id, review, rating) VALUES ($1, $2, $3)', 
         [id, review, rating],

@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 
-const ReviewWindow = () => {
+const ReviewWindow = ({reviewWindowShow, setReviewWindowShow, placeId, setPlaceId}) => {
 
   const [ ratingSend, setRatingSend] = useState(null)
   const [ reviewText, setReviewText] =useState('')
@@ -62,35 +62,54 @@ const ReviewWindow = () => {
     function test() {               // test function
     console.log(document.getElementById(`star1`).classList)
     }
-    useEffect(() => {
-      console.log('ratingSend value: ', ratingSend)
-    }, [ratingSend])
-    useEffect(() => {
-      console.log('reviewText value: ', reviewText)
-    }, [reviewText])
+    // useEffect(() => {
+    //   console.log('ratingSend value: ', ratingSend)
+    // }, [ratingSend])
+    // useEffect(() => {
+    //   console.log('reviewText value: ', reviewText)
+    // }, [reviewText])
 
     function handleCreateReview() {
-      axios.post('http://localhost:5000/api/v1/places/query', {
-        params: {
-          id: 'add that',
+      axios.post(`http://localhost:5000/api/v1/places/query?id=${placeId}`, 
+         {
           review: reviewText,
           rating: ratingSend
         }
-      }).then(res => console.log(res))
+      ).then(res => console.log(res))
         .catch(err => console.error(err))
     }
+    function handleCloseReviewWindow() {
+        setReviewWindowShow(false)
+    }
+    useEffect(() => {
+      console.log(placeId)
+    }, [placeId])
 
   return (
-    <div className='leave-review-box'>
+    <div className='leave-review-box'
+      style={{
+          opacity: reviewWindowShow ? 1 : 0,
+          pointerEvents: reviewWindowShow ? 'auto' : 'none'
+        }}
+    >
       <div className="background"></div>
       <div className="leave-review-window">
         <div className="leave-review-modal">
-          <div className="leave-review-rating">
-            <span className="fa fa-star checked" id='rstar1' onClick={handleClick}></span>
-            <span className="fa fa-star checked" id='rstar2' onClick={handleClick} ></span>
-            <span className="fa fa-star checked" id='rstar3' onClick={handleClick}></span>
-            <span className="fa fa-star" id='rstar4' onClick={handleClick}></span>
-            <span className="fa fa-star" id='rstar5' onClick={handleClick}></span>
+          <div className="leave-review-start">
+            <div className="leave-review-rating">
+              <span className="fa fa-star" id='rstar1' onClick={handleClick}></span>
+              <span className="fa fa-star" id='rstar2' onClick={handleClick} ></span>
+              <span className="fa fa-star " id='rstar3' onClick={handleClick}></span>
+              <span className="fa fa-star" id='rstar4' onClick={handleClick}></span>
+              <span className="fa fa-star" id='rstar5' onClick={handleClick}></span>
+            </div>
+            <div className="leave-reivew-close-btn">
+              <button
+              onClick={handleCloseReviewWindow}
+              >
+                <i className="fa fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
           <textarea name="review" id="review-input" placeholder='Enter your review here...'
             onChange={(e) => {setReviewText(e.target.value)}}
