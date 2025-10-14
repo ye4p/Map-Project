@@ -22,7 +22,12 @@ const TicketWindow = ( {placeId, setPlaceId, ticketWindowShow, setTicketWindowSh
 
   return (
     <div className='ticket-window'>
-        <div className="ticket-start">
+        <div className="ticket-background">
+
+        </div>
+        <div className="ticket-window-modal">
+            <div className="ticket-modal">
+                <div className="ticket-start">
             <div className="ticket-start-text">
                 <p>You can submit your ticket about this place here!</p>
             </div>
@@ -34,13 +39,15 @@ const TicketWindow = ( {placeId, setPlaceId, ticketWindowShow, setTicketWindowSh
                 </button>
             </div>
         </div>
-        <textarea name="review" id="review-input" placeholder='If you have some information that is missing or not displayed correctly, you can mention it here...'
+        <textarea name="ticket" id="ticket-input" placeholder='If you have some information that is missing or not displayed correctly, you can mention it here...'
             onChange={(e) => {setTicketText(e.target.value)}}
           ></textarea>
         <div className="leave-review-button">
         <button
             onClick={handleCreateTicket}
             >Send</button>
+        </div>
+            </div>
         </div>
     </div>
   )

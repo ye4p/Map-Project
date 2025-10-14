@@ -5,6 +5,12 @@ const CustomPopup = ( { name, type, russian, ukrainian, rating, description, add
                         reviewWindowShow, setReviewWindowShow,
                         id, placeId, setPlaceId, ticketWindowShow, setTicketWindowShow 
                       } ) => {
+  
+  function openTicketModal() {
+    setTicketWindowShow(true)
+    setPlaceId(id)
+  }
+
   function openReviewModal(name, type, russian, ukrainian, rating, description, address) {
     setReviewWindowShow(true)
     setPlaceId(id)
@@ -25,9 +31,7 @@ const CustomPopup = ( { name, type, russian, ukrainian, rating, description, add
       </div>
       <div className="popup-end">
         <button className='button-data'
-        onClick={() => {
-          alert('add info')
-        }}
+        onClick={openTicketModal}
         >Add missing data</button>
         <button className='button-review'
         onClick={openReviewModal}
