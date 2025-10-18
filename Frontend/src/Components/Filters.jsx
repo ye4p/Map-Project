@@ -117,6 +117,8 @@ const Filters = ( {
         closeFilterOnly={closeFilterOnly}
         setCloseFilterOnly={setCloseFilterOnly}
         searchArray={searchArray}
+        popups={popups}
+        setPopups={setPopups}
       />
       
     </div>
