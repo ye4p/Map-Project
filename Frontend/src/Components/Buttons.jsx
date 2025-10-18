@@ -5,7 +5,7 @@ import axios from 'axios'
 const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly, closeFilterOnly_func, paramsObject, popups, setPopups}) => {
     function changeFilter() {
         setFilterOpen(!filterOpen)
-        console.log(filterOpen)
+      //  console.log(filterOpen)
     }
     const handleFind = () => {
       
@@ -19,9 +19,9 @@ const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly
       //   }
         axios.get('http://localhost:5000/api/v1/places', {
           params: paramsObject
-        }).then(res => setPopups(res.data))
+        }).then(res => console.log(res))
         .catch(err => console.log(err))
-        console.log(paramsObject)
+        //console.log(paramsObject)
     }
     function handleFindClick(e) {
       e.preventDefault()

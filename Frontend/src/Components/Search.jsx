@@ -32,12 +32,12 @@ const Search = ( { popups, setPopups } ) => {
             // rating: rating,
             // zeroReviewsInclude: zeroReviewsInclude
         }
-        console.log(paramsObject2)
+       // console.log(paramsObject2)
         axios.get('http://localhost:5000/api/v1/places', {
             params: paramsObject2
         })
             .then(res => {
-                console.log(res.data);
+               // console.log(res.data);
                 setPopups(res.data);
                 dataArr.push(...res.data)
                 //setSearchArray([res.data])

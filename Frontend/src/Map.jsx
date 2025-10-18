@@ -48,9 +48,9 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
     }
     setFilteredPopups(filteredArr)
   }
-  useEffect(() => {
-    console.log(popups)
-  }, [popups])
+  // useEffect(() => {
+  //   console.log(popups)
+  // }, [popups])
   return (
    
     <>

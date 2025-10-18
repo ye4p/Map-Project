@@ -81,9 +81,9 @@ const ReviewWindow = ({reviewWindowShow, setReviewWindowShow, placeId, setPlaceI
     function handleCloseReviewWindow() {
         setReviewWindowShow(false)
     }
-    useEffect(() => {
-      console.log(placeId)
-    }, [placeId])
+    // useEffect(() => {
+    //   console.log(placeId)
+    // }, [placeId])
 
   return (
     <div className='leave-review-box'

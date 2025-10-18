@@ -8,12 +8,12 @@ function App() {
     
   const [ popups, setPopups] = useState([])
   const [ reviewWindowShow, setReviewWindowShow] = useState(false)
-  const [ ticketWindowShow, setTicketWindowShow] = useState(true)
+  const [ ticketWindowShow, setTicketWindowShow] = useState(false)
   const [ placeId, setPlaceId] = useState('')  
 
-  useEffect(() => {
-    console.log(reviewWindowShow)
-  }, [reviewWindowShow])
+  // useEffect(() => {
+  //   console.log(reviewWindowShow)
+  // }, [reviewWindowShow])
   
   return (
     <>
