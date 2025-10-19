@@ -13,15 +13,30 @@ const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray, popups, setP
 
     useEffect(() => {
         setNumRes(popups.length)
+        setPage(0)
     }, [popups])
 
 
     function handlePageInc() {
-        setPage(page+1)
+        //console.log(numRes)
+        //console.log((page+1)*5)
+        if (numRes>(page+1)*5) {
+            setPage(page+1)
+        }
     }
     function handlePageDec() {
         if (page>0) {
         setPage(page-1)
+        }
+    }
+    function handlePageFirst() {
+        setPage(0)
+    }
+    function handlePageLast() {
+        if (numRes % 5 == 0) {
+            setPage((numRes/5)-1)
+        } else {
+            setPage(((numRes - (numRes % 5))/5))
         }
     }
 
@@ -50,13 +65,19 @@ const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray, popups, setP
         </div>
         <div className="results-end">
             <div className="results-end-box">
-                <i className="fa fa-angle-double-left" aria-hidden="true"></i>
-                <i className="fa fa-angle-left" aria-hidden="true"></i>
-                <span>1</span>
-                <i className="fa fa-angle-right" aria-hidden="true"
-                onClick={handlePageInc}
+                <i className="fa fa-angle-double-left" aria-hidden="true"
+                    onClick={handlePageFirst}
                 ></i>
-                <i className="fa fa-angle-double-right" aria-hidden="true"></i>
+                <i className="fa fa-angle-left" aria-hidden="true"
+                    onClick={handlePageDec}
+                ></i>
+                <span>{page+1}</span>
+                <i className="fa fa-angle-right" aria-hidden="true"
+                    onClick={handlePageInc}
+                ></i>
+                <i className="fa fa-angle-double-right" aria-hidden="true"
+                    onClick={handlePageLast}
+                ></i>
             </div>
         </div>
     </div>

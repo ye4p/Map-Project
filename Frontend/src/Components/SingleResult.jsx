@@ -20,32 +20,36 @@ const SingleResult = ({popup}) => { //Now takes real data
             } else {
                 setLang('none')
             }
-
-
         }
-
     }, [popup])
+    const [data, setData] = useState({})
+
 
   return (
-    <div className='single-result'>
-        <div className="result-name">
-            <p className='single-main-result'>{popup?.name}</p>
-            <div className="single-rating">
-                <span className="fa fa-star"></span>
-                <span>{popup?.rating}</span>
-            </div>
-            <div className="single-language">
-                <p>Languages: <span>{` ${lang}`}</span></p>
-                
-            </div>
-        </div>
-        <div className="single-main">
-            <div className="single-description">
-                <p>Address: {popup?.address}</p>
-                <p>Type: {popup?.type}</p>
-            </div>
-        </div>
-    </div>
+        <div className='single-result'>
+            {popup ? (
+            <>
+                <div className="result-name">
+                    <p className='single-main-result'>{popup.name ? popup.name : "Place doesn't have a name :("}</p>
+                    { popup.rating!=0 ? <div className="single-rating">
+                        <span className="fa fa-star"></span>
+                        <span>{popup.rating}</span>
+                    </div> : null }
+                    <div className="single-language">
+                        <p>Languages: <span>{` ${lang}`}</span></p>
+                    </div>
+                </div>
+                <div className="single-main">
+                    <div className="single-description">
+                        {popup.address ? <p>Address: {popup.address}</p> : null}
+                        <p>Type: {popup.type}</p>
+                    </div>
+                </div>
+            </>
+  ) : (
+    null
+  )}
+</div>
   )
 }
 
