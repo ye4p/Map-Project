@@ -11,7 +11,7 @@ const getPlaces = (req, res) => {
     let query=`SELECT *,
         ST_X(location::geometry) AS lon,
         ST_Y(location::geometry) AS lat
-        FROM places `
+        FROM places_full `
     let conditions = [];
     let values = [];
     if (name) {
