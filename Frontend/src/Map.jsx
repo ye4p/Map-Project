@@ -5,9 +5,21 @@ import { Control } from 'leaflet'
 import { useEffect, useState } from "react";
 import L from "leaflet";
 import CustomPopup from './Components/CustomPopup';
+import markerIconPng from 'leaflet/dist/images/marker-icon.png';
+import markerShadowPng from 'leaflet/dist/images/marker-shadow.png';
 
-// This is to place zoomin/zoom out button at the bottom right corner instead of the default one at the top left.
+delete L.Icon.Default.prototype._getIconUrl;
+
+const customIcon = L.icon({
+  iconUrl: markerIconPng,
+  shadowUrl: markerShadowPng,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
+// This is to place zoom in/zoom out button at the bottom right corner instead of the default one at the top left.
 function ZoomControlBottomRight() {
+  
   const map = useMap();
   
   useEffect(() => {
