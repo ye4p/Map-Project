@@ -8,9 +8,11 @@ import CustomPopup from './Components/CustomPopup';
 import markerIconPng from 'leaflet/dist/images/marker-icon.png';
 import markerShadowPng from 'leaflet/dist/images/marker-shadow.png';
 
+import 'leaflet/dist/leaflet.css';
+
 delete L.Icon.Default.prototype._getIconUrl;
 
-const customIcon = L.icon({
+L.Icon.Default.mergeOptions({
   iconUrl: markerIconPng,
   shadowUrl: markerShadowPng,
   iconSize: [25, 41],
