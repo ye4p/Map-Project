@@ -33,7 +33,7 @@ const Search = ( { popups, setPopups } ) => {
             // zeroReviewsInclude: zeroReviewsInclude
         }
        // console.log(paramsObject2)
-        axios.get(`${import.meta.env.BACKEND_URL}/api/v1/places`, {
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/places`, {
             params: paramsObject2
         })
             .then(res => {

@@ -17,7 +17,7 @@ const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly
       //       rating: rating,
       //       zeroReviewsInclude: zeroReviewsInclude
       //   }
-        axios.get(`${import.meta.env.BACKEND_URL}/api/v1/places`, {
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/places`, {
           params: paramsObject
         }).then(res => {
           console.log(res)
