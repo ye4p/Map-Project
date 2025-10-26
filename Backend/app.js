@@ -14,9 +14,9 @@ app.use('/api/v1', placesRouter);
 
 app.use(express.static(path.join(__dirname, '../Frontend/dist')));
 
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, '../Frontend/dist', 'index.html'));
-});
+// app.use((req, res, next) => {
+//   res.sendFile(path.join(__dirname, '../Frontend/dist', 'index.html'));
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
