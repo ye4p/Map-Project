@@ -69,7 +69,7 @@ const getPlaces = (req, res) => {
 
 const createTicket = (req, res) => {
     const {id, description} = req.body
-    pool.query('INSERT INTO tickets (place_id, description) VALUES ($1, $2)', [id, description], (err, result) => {
+    pool.query('INSERT INTO tickets_upd (place_id, description) VALUES ($1, $2)', [id, description], (err, result) => {
         if (err) {
             console.error(err)
             res.status(400).send('Error submitting the ticket')
@@ -87,7 +87,7 @@ const createReview = (req, res) => {
     console.log('review: ', review)
     console.log('rating: ', rating)
     pool.query(
-        'INSERT INTO reviews (place_id, review, rating) VALUES ($1, $2, $3)', 
+        'INSERT INTO reviews_upd (place_id, review, rating) VALUES ($1, $2, $3)', 
         [id, review, rating],
         (err, result) => {
             if (err) {
@@ -103,7 +103,7 @@ const createReview = (req, res) => {
 
 const getReview = (req, res) => {
     const { id: place_id } = req.query
-    pool.query('SELECT * FROM reviews WHERE place_id=$1', [place_id], (err, result) => {
+    pool.query('SELECT * FROM reviews_upd WHERE place_id=$1', [place_id], (err, result) => {
         if (err) {
             console.error(err)
             res.status(404).send({message: 'error'})
@@ -117,7 +117,7 @@ const getReview = (req, res) => {
 const editReview = (req, res) => {
     const { id: place_id } = req.query;
     const {review, rating} = req.body;
-    pool.query(`UPDATE reviews
+    pool.query(`UPDATE reviews_upd
         SET review = $1,
             rating = $2
             WHERE place_id = $3
