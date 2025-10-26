@@ -4,11 +4,10 @@ require('dotenv').config()
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  user: 'postgres',      
-  host: 'localhost',      
-  database: 'places-db',   
-  password: process.env.DB_ACC, 
-  port: 5432,             
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  }   
 });
 
 //  pool.query('select * from places', (req,res) => {
