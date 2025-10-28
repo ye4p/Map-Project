@@ -3,6 +3,8 @@ import Search from './Components/Search'
 import ReviewWindow from './Components/ReviewWindow'
 import {useState, useEffect} from 'react'
 import TicketWindow from './Components/TicketWindow'
+import RequestWindow from './Components/RequestWindow'
+import MissingButton from './Components/MissingButton'
 
 const UI = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeId, setPlaceId, ticketWindowShow, setTicketWindowShow } ) => {
 
@@ -31,6 +33,8 @@ const UI = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeId
         setPlaceId={setPlaceId}
 
         />
+        <RequestWindow/>
+        <MissingButton/>
     </div>
   )
 }

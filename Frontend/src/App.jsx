@@ -9,6 +9,7 @@ function App() {
   const [ popups, setPopups] = useState([])
   const [ reviewWindowShow, setReviewWindowShow] = useState(false)
   const [ ticketWindowShow, setTicketWindowShow] = useState(false)
+  const [ requestWindowShow, setRequestWindowShow] = useState(false)
   const [ placeId, setPlaceId] = useState('')  
 
   // useEffect(() => {
@@ -36,6 +37,8 @@ function App() {
         setPlaceId={setPlaceId}
         ticketWindowShow={ticketWindowShow}
         setTicketWindowShow={setTicketWindowShow}
+        requestWindowShow={requestWindowShow}
+        setRequestWindowShow={setRequestWindowShow}
         />
     </>
   )
