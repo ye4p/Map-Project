@@ -7,7 +7,11 @@ const RequestWindow = () => {
       <div className="request-background"></div>
       <div className="request-window-modal">
         <div className="request-modal">
-          <div className="req-label-text-pair">
+          <div className="req-title">
+            <p>Here you can submit a ticket if you can't find certain place here!</p>
+          </div>
+          <div className="req-pairs-box">
+            <div className="req-label-text-pair">
             <p>What is the Name of the place that is missing?</p>
             <textarea name="req-name" id="req-name"></textarea>
           </div>
@@ -18,6 +22,10 @@ const RequestWindow = () => {
           <div className="req-label-text-pair">
             <p>Additonal info: </p>
             <textarea name="req-name" id="req-name"></textarea>
+          </div>
+          </div>
+          <div className="req-end">
+            <button>Submit</button>
           </div>
         </div>
       </div>

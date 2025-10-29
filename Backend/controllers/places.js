@@ -132,10 +132,31 @@ const editReview = (req, res) => {
         })
 }
 
+const createRequest = (req, res) => {
+    const {name, address, data} = req.body;
+    if (!data) {
+        data = null;
+    }
+    pool.query(
+        'INSERT INTO requests (name, address, data) VALUES ($1, $2, $3)', 
+        [name, address, data],
+        (err, result) => {
+            if (err) {
+            console.error(err)
+            res.status(400).send('Error creating request')
+        } else {
+            console.log('Review created successfully')
+            res.status(201).send('Request created successfully')
+        }
+        }
+    )
+}
+
 module.exports = {
     getPlaces,
     createTicket,
     createReview,
     editReview,
-    getReview
+    getReview,
+    createRequest
 }

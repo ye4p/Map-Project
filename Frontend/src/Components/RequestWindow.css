@@ -29,21 +29,59 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
-    position: absolute;
+     position: absolute; 
     flex-direction: column;
     background:  white;
-    height: 400px;
+    height: 500px;
     width: 660px;
     border-radius: 20px;
-    padding: 20px 30px 10px 20px;
+    padding: 15px 15px 10px 20px;
     margin-bottom: 00px;
     padding-bottom: 10px;
+}
+.req-title p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 640px;
+    font-size: 18px;
+}
+.req-pairs-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    padding: 10px 0 0 0;
+    height: 100%;
+    width: 100%;
 }
 .req-label-text-pair {
     display: flex;
     flex-direction: column;
+    align-items: start;
+    height: 100%;
+    margin: 4px 0;
+    gap: 2px;
+    width: 100%;
 }
 .req-label-text-pair textarea {
     border-radius: 5px;
     resize: none;
+    height: 100%;
+    width: 100%;
+}
+.req-end {
+    display: flex;
+    justify-content: end;
+    width: 620px;
+}
+.req-end button {
+    border: none;
+    background: #7ccff5;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s ease all;
 }
