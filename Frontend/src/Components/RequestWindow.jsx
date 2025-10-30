@@ -22,6 +22,7 @@ const RequestWindow = () => {
 
   return (
     <div className="request-window">
+      <div className="req-cross"></div>
       <div className="request-background"></div>
       <div className="request-window-modal">
         <div className="request-modal">
@@ -47,7 +48,7 @@ const RequestWindow = () => {
             <p>Additonal info: </p>
             <textarea name="req-name" id="req-name"
               onChange={(e) => {setReqData(e.target.value)}}
-              placeholder='Some extra info you might add, for example: if you know there are speakers of russian or ukranian language.'
+              placeholder='Some extra info you might add, for example: if you know there are speakers of russian or ukrainian language.'
             ></textarea>
           </div>
           </div>
