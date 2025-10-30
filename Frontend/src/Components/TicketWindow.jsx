@@ -12,7 +12,7 @@ const TicketWindow = ( {placeId, setPlaceId, ticketWindowShow, setTicketWindowSh
     }
 
     function handleCreateTicket() {
-        axios.post('http://localhost:5000/api/v1/places', {
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/places`, {
             id: placeId,
             description: ticketText
         })

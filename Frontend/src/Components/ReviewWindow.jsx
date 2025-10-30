@@ -70,7 +70,7 @@ const ReviewWindow = ({reviewWindowShow, setReviewWindowShow, placeId, setPlaceI
     // }, [reviewText])
 
     function handleCreateReview() {
-      axios.post(`http://localhost:5000/api/v1/places/query?id=${placeId}`, 
+      axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/places/query?id=${placeId}`, 
          {
           review: reviewText,
           rating: ratingSend

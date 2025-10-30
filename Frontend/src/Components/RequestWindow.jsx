@@ -1,7 +1,25 @@
 import React from 'react'
 import './RequestWindow.css'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 const RequestWindow = () => {
+  const [reqName, setReqName] = useState('')
+  const [reqAddress, setReqAddress] = useState('')
+  const [reqData, setReqData] = useState('')
+
+  function handleSubmitRequest() {
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/places/place`, 
+         {
+          name: reqName,
+          address: reqAddress,
+          reqData: reqData,
+        }
+      ).then(res => console.log(res))
+        .catch(err => console.error(err))
+    
+  }
+
   return (
     <div className="request-window">
       <div className="request-background"></div>
@@ -13,19 +31,27 @@ const RequestWindow = () => {
           <div className="req-pairs-box">
             <div className="req-label-text-pair">
             <p>What is the Name of the place that is missing?</p>
-            <textarea name="req-name" id="req-name"></textarea>
+            <textarea name="req-name" id="req-name"
+              onChange={(e) => {setReqName(e.target.value)}}
+            ></textarea>
           </div>
           <div className="req-label-text-pair">
             <p>What is the Address?</p>
-            <textarea name="req-name" id="req-name"></textarea>
+            <textarea name="req-name" id="req-name"
+              onChange={(e) => {setReqAddress(e.target.value)}}
+            ></textarea>
           </div>
           <div className="req-label-text-pair">
             <p>Additonal info: </p>
-            <textarea name="req-name" id="req-name"></textarea>
+            <textarea name="req-name" id="req-name"
+              onChange={(e) => {setReqData(e.target.value)}}
+            ></textarea>
           </div>
           </div>
           <div className="req-end">
-            <button>Submit</button>
+            <button
+              onClick={handleSubmitRequest}
+            >Submit</button>
           </div>
         </div>
       </div>

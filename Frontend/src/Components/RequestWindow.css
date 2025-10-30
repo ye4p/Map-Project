@@ -61,14 +61,16 @@
     align-items: start;
     height: 100%;
     margin: 4px 0;
-    gap: 2px;
+    gap: 4px;
     width: 100%;
 }
 .req-label-text-pair textarea {
     border-radius: 5px;
     resize: none;
     height: 100%;
-    width: 100%;
+    width: 99%;
+    font-size: 16px;
+    padding: 5px;
 }
 .req-end {
     display: flex;
