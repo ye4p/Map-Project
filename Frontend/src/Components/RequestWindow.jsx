@@ -33,18 +33,21 @@ const RequestWindow = () => {
             <p>What is the Name of the place that is missing?</p>
             <textarea name="req-name" id="req-name"
               onChange={(e) => {setReqName(e.target.value)}}
+              placeholder='Ex: McDonalds'
             ></textarea>
           </div>
           <div className="req-label-text-pair">
             <p>What is the Address?</p>
             <textarea name="req-name" id="req-name"
               onChange={(e) => {setReqAddress(e.target.value)}}
+              placeholder='Ex: 1122 34th Tampa Street'
             ></textarea>
           </div>
           <div className="req-label-text-pair">
             <p>Additonal info: </p>
             <textarea name="req-name" id="req-name"
               onChange={(e) => {setReqData(e.target.value)}}
+              placeholder='Some extra info you might add, for example: if you know there are speakers of russian or ukranian language.'
             ></textarea>
           </div>
           </div>
