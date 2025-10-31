@@ -1,21 +1,27 @@
 .popup-content {
-    height: 200px;
+    min-height: 200px;
     width: 270px;
 }
 .popup-header {
     display: flex;
     width: 100%;
     gap: 10px;
-    align-items: center;
+    align-items: start;
+    margin: 0;
 }
 .popup-header h2 {
     font-size: 18px;
+    margin: 0;
 }
 .availability {
+    margin: 0;
     display: flex;
     font-size: 16px;
 }
 .availability p {
+    margin: 0 !important;
+}
+.availability p span {
     margin: 0;
 }
 .popup-main {

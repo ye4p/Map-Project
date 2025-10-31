@@ -85,7 +85,11 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
         style={{width: '270px'}}
         maxWidth={270}
         >
-          <CustomPopup/>
+          <CustomPopup
+          name="Kim's Karate After School Program"
+          type="fitness_centre"
+          address="12712 DuPont Cir"
+          />
         </Popup>
       </Marker>
 
