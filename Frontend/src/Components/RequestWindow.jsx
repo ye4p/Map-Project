@@ -13,7 +13,7 @@ const RequestWindow = ({requestWindowShow, setRequestWindowShow}) => {
          {
           name: reqName,
           address: reqAddress,
-          reqData: reqData,
+          data: reqData,
         }
       ).then(res => console.log(res))
         .catch(err => console.error(err))
