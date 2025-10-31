@@ -53,6 +53,10 @@
   .search-form form button {
     width: 50px;
   }
+  .left-window {
+    width: 300px;
+    max-width: 300px;
+  }
 }
 .search-form button {
     border: none;
