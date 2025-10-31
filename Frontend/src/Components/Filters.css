@@ -11,12 +11,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 100px;
   
 }
 @media (max-width: 480px) {
-    .white-menu {
+ .white-menu {
         width: 400px;
-    }
+    } 
 }
 .filters-window {
     z-index: 499;
@@ -123,6 +124,11 @@
     outline: none;
     border: none;
     background: none;
+}
+@media (max-width: 480px) {
+    .close-button {
+        right: -100px;
+    }
 }
 .close-button i {
     font-size: 44px;
