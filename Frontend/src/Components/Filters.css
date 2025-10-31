@@ -13,6 +13,11 @@
     justify-content: space-between;
   
 }
+@media (max-width: 480px) {
+    .white-menu {
+        width: 400px;
+    }
+}
 .filters-window {
     z-index: 499;
     border-radius: 20px;

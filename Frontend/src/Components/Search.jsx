@@ -84,6 +84,7 @@ const Search = ( { popups, setPopups } ) => {
     <div className='left-window'
     style={{
         height: filterOpen ? '800' : 'auto'
+        
     }}>
         <div className='search-form'>
             <div 
@@ -93,7 +94,7 @@ const Search = ( { popups, setPopups } ) => {
                 <i className="fa fa-bars" aria-hidden="true"></i>
             </div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='Enter name of the place' 
+                <input type="text" placeholder='Place name' 
                 onChange={(e) => {setSearchInput(e.target.value)}}
                 />
                 <button type='submit'>
