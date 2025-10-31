@@ -6,7 +6,7 @@ import TicketWindow from './Components/TicketWindow'
 import RequestWindow from './Components/RequestWindow'
 import MissingButton from './Components/MissingButton'
 
-const UI = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeId, setPlaceId, ticketWindowShow, setTicketWindowShow } ) => {
+const UI = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeId, setPlaceId, ticketWindowShow, setTicketWindowShow, requestWindowShow, setRequestWindowShow } ) => {
 
   
 
@@ -33,8 +33,14 @@ const UI = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeId
         setPlaceId={setPlaceId}
 
         />
-        <RequestWindow/>
-        <MissingButton/>
+        <RequestWindow
+        requestWindowShow={requestWindowShow}
+        setRequestWindowShow={setRequestWindowShow}
+        />
+        <MissingButton
+        requestWindowShow={requestWindowShow}
+        setRequestWindowShow={setRequestWindowShow}
+        />
     </div>
   )
 }

@@ -39,6 +39,10 @@
     margin-bottom: 00px;
     padding-bottom: 10px;
 }
+.req-title {
+    display: flex;
+    justify-content: space-around;;
+}
 .req-title p {
     display: flex;
     align-items: center;
@@ -86,4 +90,15 @@
     width: 100px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 0.3s ease all;
+}
+.req-cross {
+    border: none;
+    background: none;
+    transition: 0.3s ease all;
+}
+.req-cross:hover {
+ transform: scale(1.05);
+}
+.req-cross i {
+    font-size: 32px;;
 }
