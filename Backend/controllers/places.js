@@ -133,7 +133,7 @@ const editReview = (req, res) => {
 }
 
 const createRequest = (req, res) => {
-    const {name, address, data} = req.body;
+    let {name, address, data} = req.body;
     if (!data) {
         data = null;
     }
