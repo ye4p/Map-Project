@@ -9,7 +9,7 @@ function App() {
   const [ popups, setPopups] = useState([])
   const [ reviewWindowShow, setReviewWindowShow] = useState(false)
   const [ ticketWindowShow, setTicketWindowShow] = useState(false)
-  const [ requestWindowShow, setRequestWindowShow] = useState(true)
+  const [ requestWindowShow, setRequestWindowShow] = useState(false)
   const [ placeId, setPlaceId] = useState('')  
 
   // useEffect(() => {
