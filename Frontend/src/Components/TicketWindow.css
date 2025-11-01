@@ -11,7 +11,17 @@
     width: 100vw;
     background: rgba(0, 0, 0, 0.501);
 }
-
+@media (max-width: 480px) {
+    .ticket-modal {
+        max-width: 420px;
+    }
+    .ticket-modal #ticket-input {
+        max-width: 365px;
+    }
+    .leave-ticket-button {
+        max-width: 385px;
+    }
+}
 .ticket-window-modal {
     position: absolute;
     top: 0;

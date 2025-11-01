@@ -77,6 +77,7 @@ const ReviewWindow = ({reviewWindowShow, setReviewWindowShow, placeId, setPlaceI
         }
       ).then(res => console.log(res))
         .catch(err => console.error(err))
+        handleCloseReviewWindow()
     }
     function handleCloseReviewWindow() {
         setReviewWindowShow(false)

@@ -35,6 +35,22 @@
     margin-bottom: 00px;
     padding-bottom: 10px;
 }
+
+@media (max-width: 480px) {
+   .leave-review-box .leave-review-modal {
+    width: 420px;
+   } 
+   .leave-review-modal #review-input {
+    max-width: 360px;
+   }
+   .leave-review-modal .leave-review-button {
+    max-width: 380px;
+   }
+   .leave-review-start {
+    max-width: 360px;
+   }
+}
+
 .leave-review-modal #review-input {
     height: 100%;
     margin: 20px 20px 10px 20px;

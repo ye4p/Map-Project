@@ -39,6 +39,18 @@
     margin-bottom: 00px;
     padding-bottom: 10px;
 }
+@media (max-width: 480px) {
+    .request-modal {
+        width: 420px;
+    }
+    .req-title {
+        width: 360px;
+    }
+    .req-end {
+        width: 300px;
+        max-width: 380px;
+    }
+}
 .req-title {
     display: flex;
     justify-content: space-around;;
