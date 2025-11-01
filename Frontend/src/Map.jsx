@@ -84,6 +84,7 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
         <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        detectRetina={true}
         />
         <ZoomControlBottomRight />
          <Marker position={[28.05, -82.66]}>
