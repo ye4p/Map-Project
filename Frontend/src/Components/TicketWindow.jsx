@@ -18,6 +18,7 @@ const TicketWindow = ( {placeId, setPlaceId, ticketWindowShow, setTicketWindowSh
         })
         .then()
         .catch( err => console.log(err))
+        handleCloseTicketWindow()
     }
     // useEffect(()=> {
     //     console.log(ticketWindowShow)
