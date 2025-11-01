@@ -10,9 +10,15 @@ import markerShadowPng from 'leaflet/dist/images/marker-shadow.png';
 
 import 'leaflet/dist/leaflet.css';
 
-delete L.Icon.Default.prototype._getIconUrl;
+// delete L.Icon.Default.prototype._getIconUrl;
 
-L.Icon.Default.mergeOptions({
+// L.Icon.Default.mergeOptions({
+//   iconUrl: markerIconPng,
+//   shadowUrl: markerShadowPng,
+//   iconSize: [25, 41],
+//   iconAnchor: [12, 41],
+// });
+L.Marker.prototype.options.icon = L.icon({
   iconUrl: markerIconPng,
   shadowUrl: markerShadowPng,
   iconSize: [25, 41],
