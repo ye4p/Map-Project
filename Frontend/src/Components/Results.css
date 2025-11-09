@@ -3,8 +3,13 @@
 }
 .results-window .results-arrow {
     position: absolute;
-    left: 30px;
+    left: 55px;
     padding: 10px 20px;
+}
+@media (max-width: 480px) {
+    .results-window .results-arrow {
+        left: 20px;
+    }
 }
 .results-window .results-arrow i {
     font-size: 44px;

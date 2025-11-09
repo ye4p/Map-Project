@@ -24,9 +24,9 @@ const Type = ( { typeOfPlace, setTypeOfPlace } ) => {
             >
                 <option value="">{t('type1')}</option>
                 <option value="grocery">{t('type2')}</option>
-                <option value="tax">{t('type3')}</option>
-                <option value="dentistry">{t('type4')}</option>
-                <option value="therapist">{t('type5')}</option>
+                <option value="insurance">{t('type3')}</option>
+                <option value="tax">{t('type4')}</option>
+                <option value="dentistry">{t('type5')}</option>
                 <option value="other">{t('type6')}</option>
             </select>
         </div>
