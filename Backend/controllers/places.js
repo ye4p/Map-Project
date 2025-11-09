@@ -61,7 +61,7 @@ const getPlaces = (req, res) => {
         if (err) {
             console.error(err)
         } 
-            //console.log('places')
+            console.log(result.rows)
             res.json(result.rows)
         
     })
