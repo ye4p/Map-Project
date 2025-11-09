@@ -108,8 +108,9 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
           position={[popup.lat, popup.lon]}
         >
           <Popup
-            style={{width: '270px'}}
-            maxWidth={270}
+            style={{width: '400px'}}
+            maxWidth={400}
+            minWidth={400}
           >
             
             <CustomPopup
