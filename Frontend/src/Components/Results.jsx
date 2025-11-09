@@ -55,7 +55,7 @@ const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray, popups, setP
             ></i>
         </div>
         <div className="results-title">
-            <p>{t('found')}<span>{numRes}</span>{ numRes>1 ? ' results:' : ' result:'}</p>
+            <p>{t('found')}<span>{numRes}</span>{t('results')}</p>
         </div>
         <div className="results-list">
             <SingleResult popup={popups[5*page]}/>

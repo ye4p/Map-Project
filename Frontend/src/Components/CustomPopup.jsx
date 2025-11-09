@@ -43,7 +43,7 @@ const CustomPopup = ( { name, type, russian, ukrainian, rating, description, add
       <div className="popup-main">
         <p className="popup-type">{t('popupplace')} <span>{typeConverter}</span></p>
         <p className="popup-address">{t('popupaddress')}<span>{address}</span></p>
-        <p className="popup-info">{t('popupinfo')}<span>{description}</span></p>
+        {description ? <p className="popup-info">{t('popupinfo')}<span>{description}</span></p> : null}
       </div>
       <div className="popup-end">
         <button className='button-data'

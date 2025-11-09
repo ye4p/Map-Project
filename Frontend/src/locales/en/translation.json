@@ -43,5 +43,6 @@
     "address": "Address: ",
     "typec": "Type: ",
     "ticket": "You can submit your ticket about this place here!",
-    "ticketp": "If you have some information that is missing or not displayed correctly, you can mention it here..."
+    "ticketp": "If you have some information that is missing or not displayed correctly, you can mention it here...",
+    "results": "results"
 }
