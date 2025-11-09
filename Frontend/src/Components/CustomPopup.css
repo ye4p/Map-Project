@@ -24,11 +24,22 @@
 .availability p span {
     margin: 0;
 }
-.popup-main {
+.popup-main p {
     font-size: 14px;
+    margin: 5px 0 !important;
 }
 .popup-main p {
-    margin: 10px 0
+    margin: 0;
+
+}
+.popup-type  {
+    margin: 0;
+}
+.popup-address {
+    margin: 0;
+}
+.popup-info {
+    margin: 0;
 }
 .popup-end {
     position: absolute;

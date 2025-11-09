@@ -20,13 +20,26 @@ const SingleResult = ({popup}) => { //Now takes real data
             } else {
                 setLang('❌')
             }
+
         }
     }, [popup])
     const [data, setData] = useState({})
 
     //       <p>🇷🇺: <span>{russian ? '✅' : '❌'}</span></p>
     //       <p>🇺🇦: <span>{ukrainian ? '✅' : '❌'}</span></p>
-
+    const [typeConverter, setTypeConverter] = useState('')
+    
+      function typeConverterFunc(e) {
+        let array = e.split('_');
+        array[0]=array[0].charAt(0).toUpperCase() + array[0].slice(1);
+        let newType = array.join(' ');
+        return newType;
+      }
+      useEffect(() => {
+        if (popup) {
+          setTypeConverter(typeConverterFunc(popup.type))
+        }
+        }, [popup])
 
   return (
         <div className='single-result'>
@@ -45,7 +58,7 @@ const SingleResult = ({popup}) => { //Now takes real data
                 <div className="single-main">
                     <div className="single-description">
                         {popup.address ? <p>Address: {popup.address}</p> : null}
-                        <p>Type: {popup.type}</p>
+                        <p>Type: {typeConverter}</p>
                     </div>
                 </div>
             </>

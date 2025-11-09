@@ -87,18 +87,19 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
         detectRetina={true}
         />
         <ZoomControlBottomRight />
-         {/* <Marker position={[28.05, -82.66]}>
+          {/* <Marker position={[28.05, -82.66]}>
         <Popup
         style={{width: '270px'}}
         maxWidth={270}
         >
           <CustomPopup
-          name="Kim's Karate After School Program"
-          type="fitness_centre"
-          address="12712 DuPont Cir"
+          name="Saras Mediterranean Food Market"
+          type="Grocery"
+          address="3949 W Kennedy Blvd, Tampa, FL 33609"
+          description=" Нет снг персонала, но есть наша еда"
           />
         </Popup>
-      </Marker> */}
+      </Marker>  */}
 
       {popups.map((popup) => (      //Change to filtered popups later
         <Marker
