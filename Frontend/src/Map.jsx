@@ -87,7 +87,7 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
         detectRetina={true}
         />
         <ZoomControlBottomRight />
-           <Marker position={[28.05, -82.66]}>
+           {/* <Marker position={[28.05, -82.66]}>
         <Popup
         style={{width: '400px'}}
         maxWidth={400}
@@ -100,7 +100,7 @@ const Map = ( { popups, setPopups, reviewWindowShow, setReviewWindowShow, placeI
           description=" Нет снг персонала, но есть наша еда"
           />
         </Popup>
-      </Marker>  
+      </Marker>   */}
 
       {popups.map((popup) => (      //Change to filtered popups later
         <Marker
