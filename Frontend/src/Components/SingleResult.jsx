@@ -10,19 +10,22 @@ const SingleResult = ({popup}) => { //Now takes real data
         if (popup) {
             let langArray=[];
             if (popup.russian && popup.russian == true) {
-                langArray.push('Ru')
+                langArray.push('🇷🇺')
             }
             if (popup.ukrainian && popup.ukrainian == true) {
-                langArray.push('Ukr')
+                langArray.push('🇺🇦')
             }
             if (langArray.length>0) {
                 setLang(langArray.join(', '))
             } else {
-                setLang('none')
+                setLang('❌')
             }
         }
     }, [popup])
     const [data, setData] = useState({})
+
+    //       <p>🇷🇺: <span>{russian ? '✅' : '❌'}</span></p>
+    //       <p>🇺🇦: <span>{ukrainian ? '✅' : '❌'}</span></p>
 
 
   return (
