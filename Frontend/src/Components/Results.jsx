@@ -43,7 +43,8 @@ const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray, popups, setP
   return (
     <div className='results-window'
     style={{
-        display: closeFilterOnly ? 'block' : 'none'
+        //display: closeFilterOnly ? 'block' : 'none'
+        display: 'block'
         //opacity: closeFilterOnly ? 1 : 0,
         //pointerEvents: closeFilterOnly ? 'auto' : 'none'
       }}

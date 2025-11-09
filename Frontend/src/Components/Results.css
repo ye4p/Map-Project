@@ -3,7 +3,7 @@
 }
 .results-window .results-arrow {
     position: absolute;
-    left: 0;
+    left: 55px;
     padding: 10px 20px;
 }
 .results-window .results-arrow i {
