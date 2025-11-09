@@ -23,10 +23,10 @@ const Type = ( { typeOfPlace, setTypeOfPlace } ) => {
             onChange={handleChangeType}
             >
                 <option value="">{t('type1')}</option>
-                <option value="park">{t('type2')}</option>
-                <option value="restaurant">{t('type3')}</option>
-                <option value="grocery">{t('type4')}</option>
-                <option value="cinema">{t('type5')}</option>
+                <option value="grocery">{t('type2')}</option>
+                <option value="tax">{t('type3')}</option>
+                <option value="dentistry">{t('type4')}</option>
+                <option value="therapist">{t('type5')}</option>
                 <option value="other">{t('type6')}</option>
             </select>
         </div>

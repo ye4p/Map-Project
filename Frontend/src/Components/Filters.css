@@ -16,7 +16,10 @@
 }
 @media (max-width: 480px) {
  .white-menu {
-        width: 400px;
+        /* width: 400px; */
+        width: 390px;
+        max-width: 400px;
+        margin: 0 auto; /* Centers horizontally */
     } 
 }
 .filters-window {
