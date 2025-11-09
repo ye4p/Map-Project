@@ -1,12 +1,13 @@
 import React from 'react'
 import './Buttons.css'
 import axios from 'axios'
-
+import { useTranslation } from 'react-i18next'
 const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly, closeFilterOnly_func, paramsObject, popups, setPopups}) => {
     function changeFilter() {
         setFilterOpen(!filterOpen)
       //  console.log(filterOpen)
     }
+    const { t } = useTranslation()
     const handleFind = () => {
       
       // let paramsObject = {
@@ -33,10 +34,10 @@ const Buttons = ({filterOpen, setFilterOpen, closeFilterOnly, setCloseFilterOnly
     }
   return (
     <div className='buttons-end'>
-        <button className='cancel' onClick={changeFilter}>Cancel</button>
+        <button className='cancel' onClick={changeFilter}>{t('bcancel')}</button>
         <button className='find'
         onClick={handleFindClick}
-        >Find</button>
+        >{t('bfind')}</button>
     </div>
   )
 }

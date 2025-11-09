@@ -2,10 +2,10 @@ import React from 'react'
 import './ReviewWindow.css'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-
+import { useTranslation } from 'react-i18next'
 
 const ReviewWindow = ({reviewWindowShow, setReviewWindowShow, placeId, setPlaceId}) => {
-
+ const { t } = useTranslation()
   const [ ratingSend, setRatingSend] = useState(null)
   const [ reviewText, setReviewText] =useState('')
 
@@ -112,13 +112,13 @@ const ReviewWindow = ({reviewWindowShow, setReviewWindowShow, placeId, setPlaceI
               </button>
             </div>
           </div>
-          <textarea name="review" id="review-input" placeholder='Enter your review here...'
+          <textarea name="review" id="review-input" placeholder={`${t('review')}`}
             onChange={(e) => {setReviewText(e.target.value)}}
           ></textarea>
           <div className="leave-review-button">
             <button
             onClick={handleCreateReview}
-            >Send</button>
+            >{t('send')}</button>
           </div>
         </div>
       </div>

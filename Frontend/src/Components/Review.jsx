@@ -1,8 +1,10 @@
 import React from 'react'
 import './Review.css'
 import {useEffect} from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Review = ( { zeroReviewsInclude, setZeroReviewsInclude } ) => {
+  const { t } = useTranslation()
   function handleSetZeroReviewsInclude() {
       setZeroReviewsInclude(!zeroReviewsInclude)
   }
@@ -14,7 +16,7 @@ const Review = ( { zeroReviewsInclude, setZeroReviewsInclude } ) => {
     <div className='review-box'>
         <div className="review-title">
             <span>
-            Include places with 0 reviews? 
+            {t('include')} 
             </span>
         </div>
         <div className="review">

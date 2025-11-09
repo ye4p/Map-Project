@@ -2,8 +2,9 @@ import React from 'react'
 import './RequestWindow.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-
+import { useTranslation } from 'react-i18next'
 const RequestWindow = ({requestWindowShow, setRequestWindowShow}) => {
+   const { t } = useTranslation()
   const [reqName, setReqName] = useState('')
   const [reqAddress, setReqAddress] = useState('')
   const [reqData, setReqData] = useState('')
@@ -40,35 +41,35 @@ const RequestWindow = ({requestWindowShow, setRequestWindowShow}) => {
             >
              <i className="fa fa-times" aria-hidden="true"></i>
             </button>
-            <p>Here you can submit a ticket if you can't find certain place here!</p>
+            <p>{t('ticketsubm')}</p>
           </div>
           <div className="req-pairs-box">
             <div className="req-label-text-pair">
-            <p>What is the Name of the place that is missing?</p>
+            <p>{t('namemis')}</p>
             <textarea name="req-name" id="req-name"
               onChange={(e) => {setReqName(e.target.value)}}
-              placeholder='Ex: McDonalds'
+              placeholder={`${t('nameplaceholder')}`}
             ></textarea>
           </div>
           <div className="req-label-text-pair">
-            <p>What is the Address?</p>
+            <p>{t('addressmis')}</p>
             <textarea name="req-name" id="req-name"
               onChange={(e) => {setReqAddress(e.target.value)}}
-              placeholder='Ex: 1122 34th Tampa Street'
+              placeholder={`${t('addressplaceholder')}`}
             ></textarea>
           </div>
           <div className="req-label-text-pair">
-            <p>Additonal info: </p>
+            <p>{t('infomis')}</p>
             <textarea name="req-name" id="req-name"
               onChange={(e) => {setReqData(e.target.value)}}
-              placeholder='Some extra info you might add, for example: if you know there are speakers of russian or ukrainian language.'
+              placeholder={`${t('infoplaceholder')}`}
             ></textarea>
           </div>
           </div>
           <div className="req-end">
             <button
               onClick={handleSubmitRequest}
-            >Submit</button>
+            >{t('bsubmit')}</button>
           </div>
         </div>
       </div>

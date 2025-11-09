@@ -1,9 +1,9 @@
 import React from 'react'
 import './MissingButton.css'
 import {useEffect, useState} from 'react'
-
+import { useTranslation } from 'react-i18next'
 const MissingButton = ({requestWindowShow, setRequestWindowShow}) => {
-
+  const { t } = useTranslation()
   const [missingHover, setMissingHover] = useState(false)
 
   function handleOpenReqWindow() {
@@ -24,8 +24,8 @@ const MissingButton = ({requestWindowShow, setRequestWindowShow}) => {
           pointerEvents: missingHover ? 'auto' : 'none'
         }}
       >
-        <p>Can't find certain place?</p>
-        <p>Request adding it here!</p>
+        <p>{t('cantf')}</p>
+        <p>{t('requestadd')}</p>
       </div>
     </div>
   )

@@ -2,11 +2,11 @@ import React from 'react'
 import './TicketWindow.css'
 import {useEffect, useState} from 'react'
 import axios from 'axios'
-
+import { useTranslation } from 'react-i18next'
 
 const TicketWindow = ( {placeId, setPlaceId, ticketWindowShow, setTicketWindowShow}) => {
     const [ticketText, setTicketText] = useState('')
-
+    const { t } = useTranslation()
     function handleCloseTicketWindow() {
         setTicketWindowShow(false)
     }
@@ -39,7 +39,7 @@ const TicketWindow = ( {placeId, setPlaceId, ticketWindowShow, setTicketWindowSh
             <div className="ticket-modal">
                 <div className="ticket-start">
                     <div className="ticket-start-text">
-                        <p>You can submit your ticket about this place here!</p>
+                        <p>{t('ticket')}</p>
                     </div>
                     <div className="ticket-close-btn">
                         <button
@@ -49,13 +49,13 @@ const TicketWindow = ( {placeId, setPlaceId, ticketWindowShow, setTicketWindowSh
                         </button>
                     </div>
                 </div>
-        <textarea name="ticket" id="ticket-input" placeholder='If you have some information that is missing or not displayed correctly, you can mention it here...'
+        <textarea name="ticket" id="ticket-input" placeholder={`${t('ticketp')}`}
             onChange={(e) => {setTicketText(e.target.value)}}
           ></textarea>
         <div className="leave-ticket-button">
         <button
             onClick={handleCreateTicket}
-            >Send</button>
+            >{t('send')}</button>
         </div>
             </div>
         </div>

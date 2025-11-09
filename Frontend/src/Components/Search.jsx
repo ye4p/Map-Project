@@ -4,10 +4,11 @@ import Filters from './Filters'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 import dataArr from '../../data-test'
+import { useTranslation } from 'react-i18next'
 
 const Search = ( { popups, setPopups } ) => {
     // const [ searchArray, setSearchArray] = useState([])
-
+    const { t } = useTranslation()
     const [ searchInput, setSearchInput ] = useState("");
     const [ russian, setRussian ] = useState(false)
     const [ ukrainian, setUkrainian ] = useState(false)
@@ -94,11 +95,11 @@ const Search = ( { popups, setPopups } ) => {
                 <i className="fa fa-bars" aria-hidden="true"></i>
             </div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='Place name' 
+                <input type="text" placeholder={`${t('place name')}`} 
                 onChange={(e) => {setSearchInput(e.target.value)}}
                 />
                 <button type='submit'>
-                    <p>Search</p>
+                    <p>{t('search')}</p>
                     <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
             </form>

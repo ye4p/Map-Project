@@ -7,12 +7,14 @@ import Stars from './Stars.jsx'
 import Review from './Review.jsx'
 import Buttons from './Buttons.jsx'
 import Results from './Results.jsx'
+import { useTranslation } from 'react-i18next'
 const Filters = ( {
   filterOpen, setFilterOpen, searchArray, russian, setRussian, 
   ukrainian, setUkrainian, typeOfPlace, setTypeOfPlace, rating, 
   setRating, zeroReviewsInclude, setZeroReviewsInclude, paramsObject,
   popups, setPopups
 }) => {
+   const { t } = useTranslation()
   function test() {
     console.log(closeFilterOnly)
   }
@@ -64,10 +66,10 @@ const Filters = ( {
        // pointerEvents: closeFilterOnly ? 'none' : 'auto'
       }}
     >
-      <p className='main-title'>Filters</p> 
+      <p className='main-title'>{t('filters')}</p> 
       <div className="lan-wrap">
         <div className='title-lan'>
-          <p>Languages spoken:</p>
+          <p>{t('languages spoken')}</p>
         </div>
       <div className="box-lan">
         <div className="checkbox-lan">
@@ -77,7 +79,7 @@ const Filters = ( {
         onChange={handleChangeRussian}
         // onChecked={}
         />
-        Russian
+        {t('russian')}
       </label>
 
       <label>
@@ -85,13 +87,13 @@ const Filters = ( {
           checked={ukrainian}
           onChange={handleChangeUkrainian}    
                 />
-        Ukrainian
+        {t('ukrainian')}
       </label>
     
       </div>
       <div className="hover-text">
-        <Hoverable question='What is this?' text='If you want to go to some place and have there speaker of certain language, you can checkmark your desired language here.'/>
-        <Hoverable question='How to contribute?' text='If you know such place, but it is not on here, you can find it and submit ticket and we are going to add it!'/>
+        <Hoverable question={`${t('what is this')}`} text={`${t('whattext')}`}/>
+        <Hoverable question={`${t('how to contribute')}`} text={`${t('howtext')}`}/>
       </div>
       </div>
       </div>

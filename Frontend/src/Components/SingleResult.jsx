@@ -1,10 +1,11 @@
 import React from 'react'
 import './SingleResult.css'
 import {useEffect, useState} from 'react'
-
+import { useTranslation } from 'react-i18next'
 
 
 const SingleResult = ({popup}) => { //Now takes real data
+     const { t } = useTranslation()
     const [ lang, setLang] = useState('none')
     useEffect(() => {
         if (popup) {
@@ -46,19 +47,19 @@ const SingleResult = ({popup}) => { //Now takes real data
             {popup ? (
             <>
                 <div className="result-name">
-                    <p className='single-main-result'>{popup.name ? popup.name : "Place doesn't have a name :("}</p>
+                    <p className='single-main-result'>{popup.name ? popup.name : `${t('noname')}`}</p>
                     { popup.rating!=0 ? <div className="single-rating">
                         <span className="fa fa-star"></span>
                         <span>{popup.rating}</span>
                     </div> : null }
                     <div className="single-language">
-                        <p>Languages: <span>{` ${lang}`}</span></p>
+                        <p>{t('languages')}<span>{` ${lang}`}</span></p>
                     </div>
                 </div>
                 <div className="single-main">
                     <div className="single-description">
-                        {popup.address ? <p>Address: {popup.address}</p> : null}
-                        <p>Type: {typeConverter}</p>
+                        {popup.address ? <p>{t('address')}{popup.address}</p> : null}
+                        <p>{t('typec')}{typeConverter}</p>
                     </div>
                 </div>
             </>

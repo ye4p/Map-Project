@@ -1,8 +1,10 @@
 import React from "react";
 import './Type.css'
 import { useState} from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Type = ( { typeOfPlace, setTypeOfPlace } ) => {
+    const { t } = useTranslation()
     function handleChangeType(e) {
         setTypeOfPlace(e.target.value)
         // console.dir(e)
@@ -14,18 +16,18 @@ const Type = ( { typeOfPlace, setTypeOfPlace } ) => {
         <div className="type-place">
             <div className="type-title">
                 <p>
-                    Choose type of place:
+                    {t('type')}
                 </p>
             </div>
             <select name="place" id="place"
             onChange={handleChangeType}
             >
-                <option value="">All</option>
-                <option value="park">Parks</option>
-                <option value="restaurant">Restaurants</option>
-                <option value="grocery">Grocery shops</option>
-                <option value="cinema">Cinemas</option>
-                <option value="other">Other</option>
+                <option value="">{t('type1')}</option>
+                <option value="park">{t('type2')}</option>
+                <option value="restaurant">{t('type3')}</option>
+                <option value="grocery">{t('type4')}</option>
+                <option value="cinema">{t('type5')}</option>
+                <option value="other">{t('type6')}</option>
             </select>
         </div>
     )

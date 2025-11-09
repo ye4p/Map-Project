@@ -1,9 +1,9 @@
 import {React, useState, useEffect} from 'react'
 import './Results.css'
 import SingleResult from './SingleResult.jsx'
-
+import { useTranslation } from 'react-i18next'
 const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray, popups, setPopups}) => {
-
+    const { t } = useTranslation()
     function handleArrow() {
         setCloseFilterOnly(!closeFilterOnly)
     }
@@ -55,7 +55,7 @@ const Results = ({closeFilterOnly, setCloseFilterOnly, searchArray, popups, setP
             ></i>
         </div>
         <div className="results-title">
-            <p>Found <span>{numRes}</span>{ numRes>1 ? ' results:' : ' result:'}</p>
+            <p>{t('found')}<span>{numRes}</span>{ numRes>1 ? ' results:' : ' result:'}</p>
         </div>
         <div className="results-list">
             <SingleResult popup={popups[5*page]}/>

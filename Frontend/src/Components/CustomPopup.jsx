@@ -1,12 +1,13 @@
 import React from 'react';
 import './CustomPopup.css'
 import {useEffect, useState} from 'react'
+import { useTranslation } from 'react-i18next'
 
 const CustomPopup = ( { name, type, russian, ukrainian, rating, description, address, 
                         reviewWindowShow, setReviewWindowShow,
                         id, placeId, setPlaceId, ticketWindowShow, setTicketWindowShow 
                       } ) => {
-
+                        const { t } = useTranslation()
   const [typeConverter, setTypeConverter] = useState('')
 
   function typeConverterFunc(e) {
@@ -40,17 +41,17 @@ const CustomPopup = ( { name, type, russian, ukrainian, rating, description, add
         </div>
       </div>
       <div className="popup-main">
-        <p className="popup-type">Type of the place: <span>{typeConverter}</span></p>
-        <p className="popup-adress">Address: <span>{address}</span></p>
-        <p className="popup-info">Additional info: <span>{description}</span></p>
+        <p className="popup-type">{t('popupplace')} <span>{typeConverter}</span></p>
+        <p className="popup-address">{t('popupaddress')}<span>{address}</span></p>
+        <p className="popup-info">{t('popupinfo')}<span>{description}</span></p>
       </div>
       <div className="popup-end">
         <button className='button-data'
         onClick={openTicketModal}
-        >Add missing data</button>
+        >{t('missdata')}</button>
         <button className='button-review'
         onClick={openReviewModal}
-        >Leave review</button>
+        >{t('leaverev')}</button>
       </div>
       
     </div>

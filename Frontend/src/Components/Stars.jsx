@@ -1,7 +1,9 @@
 import React from 'react'
 import './Stars.css'
+import { useTranslation } from 'react-i18next'
+
 const Stars = ( { rating, setRating} ) => {
-        
+        const { t } = useTranslation()
     function getId(e) {         //Get the id # from the start element
         let ID = e.split('star')[1]
         return ID
@@ -59,7 +61,7 @@ const Stars = ( { rating, setRating} ) => {
   return (
     <div className='stars-box'>
         <div className="title-stars">
-            <span>Minimum rating:</span>
+            <span>{t('rating')}</span>
         </div>
         <div className="stars">
             <span className="fa fa-star checked" id='star1' onClick={handleClick}></span>
