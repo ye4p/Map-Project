@@ -10,7 +10,7 @@ const Search = ( { popups, setPopups } ) => {
     // const [ searchArray, setSearchArray] = useState([])
     const { t } = useTranslation()
     const [ searchInput, setSearchInput ] = useState("");
-    const [ russian, setRussian ] = useState(false)
+    const [ russian, setRussian ] = useState(true)
     const [ ukrainian, setUkrainian ] = useState(false)
     const [ typeOfPlace, setTypeOfPlace ] = useState("")
     const [ rating, setRating ] = useState(0)
@@ -48,7 +48,7 @@ const Search = ( { popups, setPopups } ) => {
                 console.error(err);
             });
     }
-    const [filterOpen, setFilterOpen] = useState(false)
+    const [filterOpen, setFilterOpen] = useState(true)
     function testFilter() {
         setFilterOpen(!filterOpen)
        //console.log(filterOpen)
