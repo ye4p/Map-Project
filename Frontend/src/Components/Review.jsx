@@ -21,7 +21,7 @@ const Review = ( { zeroReviewsInclude, setZeroReviewsInclude } ) => {
         </div>
         <div className="review">
             <input type="checkbox" name="review_minimum"
-              checked={!zeroReviewsInclude}
+              checked={zeroReviewsInclude}
               onChange={handleSetZeroReviewsInclude}
             />
         </div>
