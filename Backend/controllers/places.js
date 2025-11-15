@@ -42,6 +42,7 @@ const getPlaces = (req, res) => {
         rating = $${values.length}
         `)
     }
+    console.log('zero reviews: ' + zeroReviewsInclude)
      if (!zeroReviewsInclude) {
         conditions.push(`
         reviews_count > 0
